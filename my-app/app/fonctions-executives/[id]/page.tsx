@@ -1,23 +1,32 @@
 export default async function Executives({ params }: { params: Promise<{ id: string }> }) {
     
     const { id } = await params;
+    
+    const tasks = {
+        "1": {
+            title: "Trail Making B",
+            description: "Alterner chiffres et lettres (1-A-2-B...)"
+        },
+        "2": {
+            title: "Tours de Hanoï simplifiée",
+            description: "Déplacer des disques selon des règles"
+        },
+        "3": {
+            title: "Tri de cartes (WCST adapté)",
+            description: "Deviner la règle de tri qui change"
+        }
+    } as const;
+    
+    const task = tasks[id as keyof typeof tasks];
+    
+    if (!task) {
+        return <div>Tâche non trouvée</div>;
+    }
 
     return (
         <div>
-            <h1 className="text-cyan-500">Jeux {id}</h1>
-
-            {id === "1" && 
-                <h2>ok 1</h2>
-            }
-
-            {id === "2" && 
-                <h2>ok 2</h2>
-            }
-            
-            {id === "3" && 
-                <h2>ok 3</h2>
-            }
-
+            <h1 className="text-cyan-500">{task.title}</h1>
+            <p>{task.description}</p>
         </div>
-    )
+    );
 }
