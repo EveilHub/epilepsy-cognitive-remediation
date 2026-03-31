@@ -1,0 +1,24 @@
+import Link from "next/link";
+
+export default function FonctionsExecutives() {
+    return (
+        <div className="text-slate-100 bg-zinc-800 p-4">
+            <h1 className="text-2xl font-bold">Fonctions Executives</h1>
+
+            <p className="my-10">Planifier, s'adapter, inhiber les mauvaises réponses</p>
+
+            <ul className="list-disc">
+                <li className="m-4">
+                    <Link href="">Trail Making B: alterner chiffres et lettres (1-A-2-B...)</Link>
+                </li>
+                <li className="m-4">
+                    <Link href="">Tours de Hanoï simplifiée: déplacer des disques selon des règles</Link>
+                </li>
+                <li className="m-4">
+                    <Link href="">Tri de cartes (WCST adapté): deviner la règle de tri qui change</Link>
+                </li>
+            </ul>
+
+        </div>
+    )
+}
