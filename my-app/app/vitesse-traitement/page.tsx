@@ -9,13 +9,13 @@ export default function VitesseTraitement() {
 
             <ul className="list-disc">
                 <li className="m-4">
-                    <Link href="">Temps de réaction simple: appuyer dès qu'un symbole apparaît</Link>
+                    <Link href="/vitesse-traitement/1">Temps de réaction simple: appuyer dès qu'un symbole apparaît</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">Matching rapide: Indiquer si 2 images sont identiques</Link>
+                    <Link href="/vitesse-traitement/2">Matching rapide: Indiquer si 2 images sont identiques</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">Trail Making A: relier des chiffres dans l'ordre le plus vite possible</Link>
+                    <Link href="/vitesse-traitement/3">Trail Making A: relier des chiffres dans l'ordre le plus vite possible</Link>
                 </li>
             </ul>
 

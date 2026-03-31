@@ -9,13 +9,13 @@ export default function MemoEpisodique() {
 
             <ul className="list-disc">
                 <li className="m-4">
-                    <Link href="">Paires mot-image: associer un mot à une image, retrouver la pair</Link>
+                    <Link href="/memo-episodic/1">Paires mot-image: associer un mot à une image, retrouver la pair</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">Histoire courte: lire un texte, répondre à des questions différées</Link>
+                    <Link href="/memo-episodic/2">Histoire courte: lire un texte, répondre à des questions différées</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">Lieux et objets: mémoriser où sont placer les objets dans une pièce</Link>
+                    <Link href="/memo-episodic/3">Lieux et objets: mémoriser où sont placer les objets dans une pièce</Link>
                 </li>
             </ul>
 

@@ -9,13 +9,13 @@ export default function LanguageFluence() {
 
             <ul className="list-disc">
                 <li className="m-4">
-                    <Link href="">Fluence catégorielle: nommer le plus d'animaux possible en 1 minute</Link>
+                    <Link href="/language-fluence/1">Fluence catégorielle: nommer le plus d'animaux possible en 1 minute</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">Fluence littérale: nommer des mots commençant pas "P"</Link>
+                    <Link href="/language-fluence/2">Fluence littérale: nommer des mots commençant pas "P"</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">Complétion de phrases: trouver le mot manquant</Link>
+                    <Link href="/language-fluence/3">Complétion de phrases: trouver le mot manquant</Link>
                 </li>
             </ul>
 

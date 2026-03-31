@@ -9,13 +9,13 @@ export default function FonctionsExecutives() {
 
             <ul className="list-disc">
                 <li className="m-4">
-                    <Link href="">Trail Making B: alterner chiffres et lettres (1-A-2-B...)</Link>
+                    <Link href="/fonctions-executives/1">Trail Making B: alterner chiffres et lettres (1-A-2-B...)</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">Tours de Hanoï simplifiée: déplacer des disques selon des règles</Link>
+                    <Link href="/fonctions-executives/2">Tours de Hanoï simplifiée: déplacer des disques selon des règles</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">Tri de cartes (WCST adapté): deviner la règle de tri qui change</Link>
+                    <Link href="/fonctions-executives/3">Tri de cartes (WCST adapté): deviner la règle de tri qui change</Link>
                 </li>
             </ul>
 
