@@ -9,13 +9,13 @@ export default function AttentionSoutenue() {
 
             <ul className="list-disc">
                 <li className="m-4">
-                    <Link href="">CPT (continuous Performance Task): appuyer quand une cible apparaît, ignorer les distractions</Link>
+                    <Link href="/attention-soutenue/1">CPT (continuous Performance Task): appuyer quand une cible apparaît, ignorer les distractions</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">Barrage de Symboles: Trouver un symbole cible parmi d'autres</Link>
+                    <Link href="/attention-soutenue/2">Barrage de Symboles: Trouver un symbole cible parmi d'autres</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">Comptage de Cibles: Compter combien de fois un élément apparaît</Link>
+                    <Link href="/attention-soutenue/3">Comptage de Cibles: Compter combien de fois un élément apparaît</Link>
                 </li>
             </ul>
         </div>

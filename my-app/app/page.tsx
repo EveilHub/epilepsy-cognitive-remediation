@@ -11,25 +11,25 @@ export default function Home() {
 
       <ul className="list-disc">
         <li>
-          <Link href="./memo-travail">Mémoire de Travail</Link>
+          <Link href="/memo-travail">Mémoire de Travail</Link>
         </li>
         <li>
-          <Link href="./memo-episodic">Mémoire Episodique</Link>
+          <Link href="/memo-episodic">Mémoire Episodique</Link>
         </li>
         <li>
-          <Link href="./attention-soutenue">Attention Soutenue</Link>
+          <Link href="/attention-soutenue">Attention Soutenue</Link>
         </li>
         <li>
-          <Link href="./attention-selective">Attention Sélective et Divisée</Link>
+          <Link href="/attention-selective">Attention Sélective et Divisée</Link>
         </li>
         <li>
-          <Link href="./vitesse-traitement">Vitesse de Traitement</Link>
+          <Link href="/vitesse-traitement">Vitesse de Traitement</Link>
         </li>
         <li>
-          <Link href="./fonctions-executives">Fonctions Ecécutives</Link>
+          <Link href="/fonctions-executives">Fonctions Ecécutives</Link>
         </li>
         <li>
-          <Link href="./language-fluence">Language et Fluence Verbale</Link>
+          <Link href="/language-fluence">Language et Fluence Verbale</Link>
         </li>
       </ul>
 

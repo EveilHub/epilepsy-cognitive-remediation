@@ -9,13 +9,13 @@ export default function MemoTravail() {
 
             <ul className="list-disc">
                 <li className="m-4">
-                    <Link href="">Séquences de chiffres: mémoriser une suite, la répéter à l'envers</Link>
+                    <Link href="/memo-travail/1">Séquences de chiffres: mémoriser une suite, la répéter à l'envers</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">N-back: Indiquer si le stimulus actuel correspond à celui d'il y a N étapes</Link>
+                    <Link href="/memo-travail/2">N-back: Indiquer si le stimulus actuel correspond à celui d'il y a N étapes</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">Grilles de points: mémoriser des positions, les reproduire</Link>
+                    <Link href="/memo-travail/3">Grilles de points: mémoriser des positions, les reproduire</Link>
                 </li>
             </ul>
 

@@ -9,10 +9,10 @@ export default function AttentionSelective() {
 
             <ul className="list-disc">
                 <li className="m-4">
-                    <Link href="">Stroop adapté: nommer la couleur d'un mot (mot = couleur)</Link>
+                    <Link href="/attention-selective/1">Stroop adapté: nommer la couleur d'un mot (mot = couleur)</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="">Double tâche légère: mémoriser une liste et classer des images</Link>
+                    <Link href="/attention-selective/2">Double tâche légère: mémoriser une liste et classer des images</Link>
                 </li>
             </ul>
 
