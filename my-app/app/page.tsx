@@ -5,8 +5,10 @@ import { ChangeEvent, useState } from "react";
 export default function Home() {
 
   const [crisesState, setCrisesState] = useState<string | undefined>(undefined);
+  const [tempsCrise, setTempsCrise] = useState<string>("");
   const [perteConnaissance, setPerteConnaissance] = useState<string | undefined>(undefined);
   const [maettt, setMaettt] = useState<string | undefined>(undefined);
+  const [nameMae, setNameMae] = useState<string>("");
 
   const handleCrises = (e: ChangeEvent<HTMLInputElement>): void => {
     setCrisesState(e.target.value);
@@ -33,20 +35,20 @@ export default function Home() {
 
 
       <div className="p-4 border border-emerald-100 rounded-lg">
-        <p className="mb-4">Combien de crises avez-vous en moyenne par jour ?</p>
+        <p className="mb-4">Combien de crises avez-vous en moyenne par mois ?</p>
 
-        <div className="w-250 flex flex-row items-center justify-around py-4 bg-emerald-50 border border-emerald-100 rounded-lg">
+        <div className="w-150 flex flex-row items-center justify-around py-4 bg-emerald-50 border border-emerald-100 rounded-lg">
           <label htmlFor="crise0">
             <input 
               type="radio"
               id="crise0" 
               name="crise0"
-              value="absence de crise"
-              checked={crisesState === "absence de crise"}
+              value={`aucune crise`}
+              checked={crisesState === `aucune crise`}
               onChange={handleCrises}
               className="mr-2"
             />
-            absence de crise
+            aucune
           </label>
 
           <label htmlFor="crise1">
@@ -54,24 +56,24 @@ export default function Home() {
               type="radio"
               id="crise1" 
               name="crise1"
-              value="1 crise"
-              checked={crisesState === "1 crise"}
+              value="1-2 crise"
+              checked={crisesState === "1-2 crise"}
               onChange={handleCrises}
               className="mr-2"
             />
-            1 crise
+            1-2
           </label>
           <label htmlFor="crise2">
             <input 
               type="radio"
               id="crise2" 
               name="crise2"
-              value="2 crises"
-              checked={crisesState === "2 crises"}
+              value="2-3 crises"
+              checked={crisesState === "2-3 crises"}
               onChange={handleCrises}
               className="mr-2"
             />
-            2 crises
+            2-3
           </label>
 
           <label htmlFor="crise3">
@@ -79,30 +81,18 @@ export default function Home() {
               type="radio"
               id="crise3" 
               name="crise3"
-              value="3 crises"
-              checked={crisesState === "3 crises"}
+              value="3-4 crises"
+              checked={crisesState === "3-4 crises"}
               onChange={handleCrises}
               className="mr-2"
             />
-            3 crises
+            3-4
           </label>
           <label htmlFor="crise4">
             <input 
               type="radio"
               id="crise4" 
               name="crise4"
-              value="4 crises"
-              checked={crisesState === "4 crises"}
-              onChange={handleCrises}
-              className="mr-2"
-            />
-            4 crises
-          </label>
-          <label htmlFor="crise5">
-            <input 
-              type="radio"
-              id="crise5" 
-              name="crise5"
               value="+ de 4 crises"
               checked={crisesState === "+ de 4 crises"}
               onChange={handleCrises}
@@ -144,6 +134,25 @@ export default function Home() {
 
         </div>
 
+
+        <div>
+          <p className="mt-8 mb-4">Combien de temps les crises durent-elles ?</p>
+
+          <div className="flex flex-row items-center justify-start">
+            <input 
+              type="text" 
+              id="tempsDeCrise" 
+              name="tempsDeCrise" 
+              value={tempsCrise} 
+              onChange={(e) => setTempsCrise(e.target.value)} 
+              className="bg-emerald-50 border border-emerald-100 rounded px-2 py-1" />
+            <p className="ml-2">minutes</p>
+          </div>
+        </div>
+
+
+
+
         <div className="">
           <p className="mt-8 mb-4">Prenez-vous un MAE (Médicament Anti Epileptique) ?</p>
 
@@ -175,6 +184,21 @@ export default function Home() {
           </div>
 
         </div>
+
+
+
+        <div>
+          <p className="mt-8 mb-4">Comment s'appelle le traitement (MAE) que vous prenez ?</p>
+          <input 
+            type="text" 
+            id="tempsDeCrise" 
+            name="tempsDeCrise" 
+            value={nameMae} 
+            onChange={(e) => setNameMae(e.target.value)} 
+            className="bg-emerald-50 border border-emerald-100 rounded px-2 py-1" 
+          />
+        </div>
+
 
 
       </div>
