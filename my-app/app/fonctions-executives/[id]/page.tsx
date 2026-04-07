@@ -1,4 +1,4 @@
-export default async function Executives({ params }: { params: Promise<{ id: string }> }) {
+export default async function FonctionsExecutivesExo({ params }: { params: Promise<{ id: string }> }) {
     
     const { id } = await params;
     
@@ -21,12 +21,12 @@ export default async function Executives({ params }: { params: Promise<{ id: str
     
     if (!task) {
         return <div>Tâche non trouvée</div>;
-    }
+    };
 
     return (
         <div>
-            <h1 className="text-cyan-500">{task.title}</h1>
-            <p>{task.description}</p>
+            <h1 className="text-2xl font-bold">{task.title}</h1>
+            <p className="p-4">{task.description}</p>
         </div>
     );
 }

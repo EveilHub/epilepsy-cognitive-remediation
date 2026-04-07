@@ -2,6 +2,13 @@
 
 ## Goals
 
+- attention-selective
+- attention-soutenue
+- vitesse-traitement
+- fonctions-executives
+
+//---
+
 - routes en fn des exo
 - style
 - consignes claires et courtes
