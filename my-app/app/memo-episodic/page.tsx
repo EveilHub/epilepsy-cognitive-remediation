@@ -32,7 +32,6 @@ export default function MemoEpisodique() {
                 </nav>
             </div>
 
-
         </div>
     )
 }

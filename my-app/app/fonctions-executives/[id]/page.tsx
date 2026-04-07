@@ -25,7 +25,7 @@ export default async function FonctionsExecutivesExo({ params }: { params: Promi
 
     return (
         <div>
-            <h1 className="text-3xl font-bold">{task.title}</h1>
+            <h1 className="text-2xl font-bold">{task.title}</h1>
             <p className="p-4">{task.description}</p>
         </div>
     );
