@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Menu() {
     return (
-        <nav className="bg-green-500 px-4 py-6">
-            <ul className="flex flex-row items-center justify-between text-base font-bold">
+        <nav className="text-base font-bold text-slate-100 bg-emerald-500 dark:text-slate-100 dark:bg-slate-700 px-4 py-6">
+            <ul className="flex flex-row items-center justify-between">
                 <li>
                     <Link href="/">Home</Link>
                 </li>

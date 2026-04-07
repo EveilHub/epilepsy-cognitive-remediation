@@ -28,14 +28,14 @@ export default function Home() {
     <div className="">
 
       <div className="mb-8">
-        <h1 className="text-3xl font-bold">Remédiation cognitive pour l'épilepsie</h1>
+        <h1 className="text-2xl font-bold">Remédiation cognitive pour l'épilepsie</h1>
       </div>
 
 
-      <div className="pl-4">
+      <div className="p-4 border border-emerald-100 rounded-lg">
         <p className="mb-4">Combien de crises avez-vous en moyenne par jour ?</p>
 
-        <div className="w-250 flex flex-row items-center justify-around py-4 bg-green-50 border border-green-100 rounded-lg">
+        <div className="w-250 flex flex-row items-center justify-around py-4 bg-emerald-50 border border-emerald-100 rounded-lg">
           <label htmlFor="crise0">
             <input 
               type="radio"
@@ -115,7 +115,7 @@ export default function Home() {
         <div>
           <p className="mt-8 mb-4">Avez-vous des crises avec ou sans pertes de connaissances ?</p>
 
-          <div className="w-150 flex flex-row items-center justify-around py-4 bg-green-50 border border-green-100 rounded-lg">
+          <div className="w-150 flex flex-row items-center justify-around py-4 bg-emerald-50 border border-emerald-100 rounded-lg">
             <label htmlFor="avecPerteCo">
               <input 
                 type="radio"
@@ -147,7 +147,7 @@ export default function Home() {
         <div className="">
           <p className="mt-8 mb-4">Prenez-vous un MAE (Médicament Anti Epileptique) ?</p>
 
-          <div className="w-50 flex flex-row items-center justify-around py-4 bg-green-50 border border-green-100 rounded-lg">
+          <div className="w-50 flex flex-row items-center justify-around py-4 bg-emerald-50 border border-emerald-100 rounded-lg">
             <label htmlFor="oui">
               <input 
                 type="radio"
@@ -177,6 +177,12 @@ export default function Home() {
         </div>
 
 
+      </div>
+
+      <div className="flex justify-center">
+        <button type="submit" className="text-slate-100 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-400 dark:bg-purple-500 dark:hover:bg-purple-600 dark:active:bg-purple-400 mt-4 px-4 py-2 rounded-lg">
+          Commencer l'entraînement
+        </button>
       </div>
 
     </div>
