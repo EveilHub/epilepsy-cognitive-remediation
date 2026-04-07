@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MemoTravailContent } from "@/lib/tasks-content";
 
 export default function MemoTravail() {
     return (
@@ -12,20 +13,20 @@ export default function MemoTravail() {
                     <ul className="list-disc">
                         <li className="hover:text-emerald-600 m-4">
                             <Link href="/memo-travail/1">
-                                <span className="font-bold">Séquences de chiffres:</span>
-                                &nbsp;Mémoriser une suite, la répéter à l'envers
+                                <span className="font-bold">{MemoTravailContent.sequChiff.title}</span>
+                                &nbsp;{MemoTravailContent.sequChiff.description}
                             </Link>
                         </li>
                         <li className="hover:text-emerald-600 m-4">
                             <Link href="/memo-travail/2">
-                                <span className="font-bold">N-back:</span>
-                                &nbsp;Indiquer si le stimulus actuel correspond à celui d'il y a N étapes
+                                <span className="font-bold">{MemoTravailContent.nback.title}</span>
+                                &nbsp;{MemoTravailContent.nback.description}
                             </Link>
                         </li>
                         <li className="hover:text-emerald-600 m-4">
                             <Link href="/memo-travail/3">
-                                <span className="font-bold">Grilles de points:</span>
-                                &nbsp;Mémoriser des positions, les reproduire
+                                <span className="font-bold">{MemoTravailContent.grillePoint.title}</span>
+                                &nbsp;{MemoTravailContent.grillePoint.description}
                             </Link>
                         </li>
                     </ul>
@@ -33,5 +34,5 @@ export default function MemoTravail() {
             </div>
 
         </div>
-    )
-}
+    );
+};
