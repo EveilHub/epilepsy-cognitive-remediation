@@ -2,22 +2,35 @@ import Link from "next/link";
 
 export default function MemoTravail() {
     return (
-        <div className="text-slate-100 bg-zinc-800 p-4">
+        <div className="">
             <h1 className="text-2xl font-bold">Memoire au Travail</h1>
 
-            <p className="my-10">Garder et manipuler des informations en temps réel</p>
+            <div className="text-lg pl-4">
+                <p className="my-8">Garder et manipuler des informations en temps réel</p>
 
-            <ul className="list-disc">
-                <li className="m-4">
-                    <Link href="/memo-travail/1">Séquences de chiffres: mémoriser une suite, la répéter à l'envers</Link>
-                </li>
-                <li className="m-4">
-                    <Link href="/memo-travail/2">N-back: Indiquer si le stimulus actuel correspond à celui d'il y a N étapes</Link>
-                </li>
-                <li className="m-4">
-                    <Link href="/memo-travail/3">Grilles de points: mémoriser des positions, les reproduire</Link>
-                </li>
-            </ul>
+                <nav>
+                    <ul className="list-disc">
+                        <li className="hover:text-emerald-600 m-4">
+                            <Link href="/memo-travail/1">
+                                <span className="font-bold">Séquences de chiffres:</span>
+                                &nbsp;Mémoriser une suite, la répéter à l'envers
+                            </Link>
+                        </li>
+                        <li className="hover:text-emerald-600 m-4">
+                            <Link href="/memo-travail/2">
+                                <span className="font-bold">N-back:</span>
+                                &nbsp;Indiquer si le stimulus actuel correspond à celui d'il y a N étapes
+                            </Link>
+                        </li>
+                        <li className="hover:text-emerald-600 m-4">
+                            <Link href="/memo-travail/3">
+                                <span className="font-bold">Grilles de points:</span>
+                                &nbsp;Mémoriser des positions, les reproduire
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
         </div>
     )
