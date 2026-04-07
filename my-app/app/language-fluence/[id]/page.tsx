@@ -1,23 +1,29 @@
-export default async function Fluence({ params }: { params: Promise<{ id: string }> }) {
+export default async function LanguageFluenceExo({ params }: { params: Promise<{ id: string }> }) {
     
     const { id } = await params;
+    
+    const tasks = {
+        "1": {
+            title: "",
+            description: ""
+        },
+        "2": {
+            title: "",
+            description: ""
+        }
+    } as const;
+    
+    const task = tasks[id as keyof typeof tasks];
+    
+    if (!task) {
+        return <div>Tâche non trouvée</div>;
+    };
 
     return (
         <div>
-            <h1 className="text-cyan-500">Jeux {id}</h1>
-
-            {id === "1" && 
-                <h2>ok 1</h2>
-            }
-
-            {id === "2" && 
-                <h2>ok 2</h2>
-            }
-            
-            {id === "3" && 
-                <h2>ok 3</h2>
-            }
-
+            <h1 className="text-3xl font-bold">{task.title}</h1>
+            <p className="p-4">{task.description}</p>
+            <div></div>
         </div>
-    )
+    );
 }

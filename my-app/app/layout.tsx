@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-full flex flex-col">
         <Menu />
-        <main className="w-full h-max-screen p-4">
+        <main className="w-full h-220 text-green-500 bg-white p-10">
           {children}
         </main>
       </body>
