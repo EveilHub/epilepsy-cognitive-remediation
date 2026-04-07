@@ -3,7 +3,7 @@ import { MemoTravailContent } from "@/lib/tasks-content";
 
 export default function MemoTravail() {
     return (
-        <div className="">
+        <div>
             <h1 className="text-2xl font-bold">Memoire au Travail</h1>
 
             <div className="text-lg pl-4">

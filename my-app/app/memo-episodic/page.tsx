@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function MemoEpisodique() {
     return (
-        <div className="">
+        <div>
             <h1 className="text-2xl font-bold">Memoire Episodique</h1>
 
             <div className="text-lg pl-4">

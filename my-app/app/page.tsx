@@ -27,7 +27,7 @@ export default function Home() {
   console.log(maettt);
 
   return (
-    <div className="">
+    <div>
 
       <div className="mb-8">
         <h1 className="text-2xl font-bold">Remédiation cognitive pour l'épilepsie</h1>
@@ -153,7 +153,7 @@ export default function Home() {
 
 
 
-        <div className="">
+        <div>
           <p className="mt-8 mb-4">Prenez-vous un MAE (Médicament Anti Epileptique) ?</p>
 
           <div className="w-50 flex flex-row items-center justify-around py-4 bg-emerald-50 border border-emerald-100 rounded-lg">
@@ -211,4 +211,4 @@ export default function Home() {
 
     </div>
   );
-}
+};

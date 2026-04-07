@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function LanguageFluence() {
     return (
-        <div className="">
+        <div>
             <h1 className="text-2xl font-bold">Language et Fluence Verbale</h1>
 
             <div className="text-lg pl-4">
