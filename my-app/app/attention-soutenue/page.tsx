@@ -1,3 +1,4 @@
+import { AttentSouContent } from "@/lib/tasks-content";
 import Link from "next/link";
 
 export default function AttentionSoutenue() {
@@ -9,15 +10,15 @@ export default function AttentionSoutenue() {
 
             <ul className="list-disc">
                 <li className="m-4">
-                    <Link href="/attention-soutenue/1">CPT (continuous Performance Task): appuyer quand une cible apparaît, ignorer les distractions</Link>
+                    <Link href="/attention-soutenue/1">{AttentSouContent.cpt.title} {AttentSouContent.cpt.description}</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="/attention-soutenue/2">Barrage de Symboles: Trouver un symbole cible parmi d'autres</Link>
+                    <Link href="/attention-soutenue/2">{AttentSouContent.barrageSymboles.title} {AttentSouContent.barrageSymboles.description}</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="/attention-soutenue/3">Comptage de Cibles: Compter combien de fois un élément apparaît</Link>
+                    <Link href="/attention-soutenue/3">{AttentSouContent.comptageCibles.title} {AttentSouContent.comptageCibles.description}</Link>
                 </li>
             </ul>
         </div>
-    )
-}
+    );
+};

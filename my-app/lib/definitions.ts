@@ -11,4 +11,49 @@ export type MemoTravailTypes = {
         title: string;
         description: string;
     }
-}
+};
+
+export type MemoEpisodicType = {
+    pairesMotsImg: {
+        title: string;
+        description: string;
+    },
+    storyShort: {
+        title: string;
+        description: string;
+    },
+    lieuxObjets: {
+        title: string;
+        description: string;
+    }
+};
+
+export type AttentSouContentType = {
+    cpt: {
+        title: string;
+        description: string;
+    },
+    barrageSymboles: {
+        title: string;
+        description: string;
+    },
+    comptageCibles: {
+        title: string;
+        description: string;
+    }
+};
+
+export type VitesseTraiementType = {
+    tempsReact: {
+        title: string; 
+        description: string;
+    },
+    matchingFast: {
+        title: string; 
+        description: string;
+    },
+    trailMakingA: {
+        title: string; 
+        description: string;
+    }
+};

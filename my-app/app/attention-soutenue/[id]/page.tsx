@@ -1,19 +1,24 @@
+import { AttentSouContent } from "@/lib/tasks-content";
+
 export default async function AttentionSoutenueExo({ params }: { params: Promise<{ id: string }> }) {
     
     const { id } = await params;
     
     const tasks = {
         "1": {
-            title: "CPT (continuous Performance Task)",
-            description: "Appuyer quand une cible apparaît, ignorer les distractions"
+            title: AttentSouContent.cpt.title,
+            description: AttentSouContent.cpt.description,
+            component: <Truc/>
         },
         "2": {
-            title: "Barrage de Symboles",
-            description: "Trouver un symbole cible parmi d'autres"
+            title: AttentSouContent.barrageSymboles.title,
+            description: AttentSouContent.barrageSymboles.description,
+            component: <Truc/>
         },
         "3": {
-            title: "Comptage de Cibles",
-            description: "Compter combien de fois un élément apparaît"
+            title: AttentSouContent.comptageCibles.title,
+            description: AttentSouContent.comptageCibles.description,
+            component: <Truc/>
         }
     } as const;
     
@@ -26,7 +31,8 @@ export default async function AttentionSoutenueExo({ params }: { params: Promise
     return (
         <div>
             <h1 className="text-2xl font-bold">{task.title}</h1>
-            <p className="p-4">{task.description}</p>
+            <p className="px-4 pt-4 pb-6">{task.description}</p>
+            <div className="h-170 border">{task.component}</div>
         </div>
     );
-}
+};

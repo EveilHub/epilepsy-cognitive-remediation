@@ -1,6 +1,7 @@
 import HistoireCourte from "@/app/ui/memo-episodicExo/HistoireCourte";
 import LieuxEtObjets from "@/app/ui/memo-episodicExo/LieuxEtObjets";
 import PairesMotImage from "@/app/ui/memo-episodicExo/PairesMotImage";
+import { MemoEpisodic } from "@/lib/tasks-content";
 
 export default async function MemoEpisodiqueExo({ params }: { params: Promise<{ id: string }> }) {
     
@@ -8,18 +9,18 @@ export default async function MemoEpisodiqueExo({ params }: { params: Promise<{ 
     
     const tasks = {
         "1": {
-            title: "Paires mot-image",
-            description: "Associer un mot à une image, retrouver la pair",
+            title: MemoEpisodic.pairesMotsImg.title,
+            description: MemoEpisodic.pairesMotsImg.description,
             component: <PairesMotImage />
         },
         "2": {
-            title: "Histoire courte",
-            description: "Lire un texte, répondre à des questions différées",
+            title: MemoEpisodic.storyShort.title,
+            description: MemoEpisodic.storyShort.description,
             component: <HistoireCourte />
         },
         "3": {
-            title: "Lieux et objets",
-            description: "Mémoriser où sont placer les objets dans une pièce",
+            title: MemoEpisodic.lieuxObjets.title,
+            description: MemoEpisodic.lieuxObjets.description,
             component: <LieuxEtObjets />
         }
     } as const;
@@ -37,4 +38,4 @@ export default async function MemoEpisodiqueExo({ params }: { params: Promise<{ 
             <div className="h-170 border">{task.component}</div>
         </div>
     );
-}
+};
