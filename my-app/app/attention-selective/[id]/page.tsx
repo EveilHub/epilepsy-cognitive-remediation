@@ -1,15 +1,21 @@
+import DoubleTask from "@/app/ui/attention-selectiveExo/DoubleTask";
+import StroopAdapted from "@/app/ui/attention-selectiveExo/StroopAdapted";
+import { AttentionSelectiveContent } from "@/lib/tasks-content";
+
 export default async function AttentionSelectiveExo({ params }: { params: Promise<{ id: string }> }) {
     
     const { id } = await params;
     
     const tasks = {
         "1": {
-            title: "Stroop adapté",
-            description: "Nommer la couleur d'un mot (mot ≠ couleur)"
+            title: AttentionSelectiveContent.stroopAdapted.title,
+            description: AttentionSelectiveContent.stroopAdapted.description,
+            component: <StroopAdapted />
         },
         "2": {
-            title: "Double tâche légère",
-            description: "Mémoriser une liste et classer des images"
+            title: AttentionSelectiveContent.doubleTask.title,
+            description: AttentionSelectiveContent.doubleTask.description,
+            component: <DoubleTask />
         }
     } as const;
     
@@ -22,8 +28,8 @@ export default async function AttentionSelectiveExo({ params }: { params: Promis
     return (
         <div>
             <h1 className="text-2xl font-bold">{task.title}</h1>
-            <p className="p-4">{task.description}</p>
-            <div></div>
+            <p className="px-4 pt-4 pb-6">{task.description}</p>
+            <div className="h-170 border">{task.component}</div>
         </div>
     );
-}
+};

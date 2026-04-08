@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MemoTravailContent } from "@/lib/tasks-content";
 
-export default function MemoTravail() {
+export default function MemoTravailPage() {
     return (
         <div>
             <h1 className="text-2xl font-bold">Memoire au Travail</h1>

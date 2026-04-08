@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function LanguageFluence() {
+export default function LanguageFluencePage() {
     return (
         <div>
             <h1 className="text-2xl font-bold">Language et Fluence Verbale</h1>

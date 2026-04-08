@@ -1,7 +1,7 @@
 import { VitesseTraiementContent } from "@/lib/tasks-content";
 import Link from "next/link";
 
-export default function VitesseTraitement() {
+export default function VitesseTraitementPage() {
     return (
         <div>
             <h1 className="text-2xl font-bold">Vitesse Traitement</h1>

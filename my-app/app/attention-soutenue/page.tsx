@@ -1,9 +1,9 @@
 import { AttentSouContent } from "@/lib/tasks-content";
 import Link from "next/link";
 
-export default function AttentionSoutenue() {
+export default function AttentionSoutenuePage() {
     return (
-        <div className="text-slate-100 bg-zinc-800 p-4">
+        <div>
             <h1 className="text-2xl font-bold">Attention Soutenue</h1>
 
             <p className="my-10">Maintenir sa concentration sur la durée</p>

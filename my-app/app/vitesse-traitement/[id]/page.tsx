@@ -3,7 +3,7 @@ import TempsReaction from "@/app/ui/vitesse-traitementExo/TempsReaction";
 import TrailMakingA from "@/app/ui/vitesse-traitementExo/TrailMakingA";
 import { VitesseTraiementContent } from "@/lib/tasks-content";
 
-export default async function Vitesse({ params }: { params: Promise<{ id: string }> }) {
+export default async function VitesseTraitementExo({ params }: { params: Promise<{ id: string }> }) {
     
     const { id } = await params;
     

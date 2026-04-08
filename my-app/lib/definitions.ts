@@ -28,6 +28,17 @@ export type MemoEpisodicType = {
     }
 };
 
+export type AttentionSelectiveType = {
+    stroopAdapted: {
+        title: string;
+        description: string;
+    },
+    doubleTask: {
+        title: string;
+        description: string;
+    }
+};
+
 export type AttentSouContentType = {
     cpt: {
         title: string;
@@ -40,6 +51,21 @@ export type AttentSouContentType = {
     comptageCibles: {
         title: string;
         description: string;
+    }
+};
+
+export type FonctionExecutivesType = {
+    trailMakingB: {
+        title: string;
+        description: string;
+    },
+    tourHanoi: {
+        title: string;
+        description: string; 
+    },
+    triDeCartes: {
+        title: string;
+        description: string; 
     }
 };
 

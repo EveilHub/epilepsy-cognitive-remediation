@@ -1,4 +1,4 @@
-import { AttentSouContentType, MemoEpisodicType, MemoTravailTypes, VitesseTraiementType } from "./definitions";
+import { AttentionSelectiveType, AttentSouContentType, FonctionExecutivesType, MemoEpisodicType, MemoTravailTypes, VitesseTraiementType } from "./definitions";
 
 export const MemoTravailContent: MemoTravailTypes = {
     sequChiff: {
@@ -30,6 +30,17 @@ export const MemoEpisodic: MemoEpisodicType = {
     },
 };
 
+export const AttentionSelectiveContent: AttentionSelectiveType = {
+    stroopAdapted: {
+        title: "Stroop adapté:",
+        description: "Nommer la couleur d'un mot (mot = couleur)"
+    },
+    doubleTask: {
+        title: "Double tâche légère:",
+        description: "Mémoriser une liste et classer des images"
+    }
+};
+
 export const AttentSouContent: AttentSouContentType = {
     cpt: {
         title: "CPT (continuous Performance Task)",
@@ -42,6 +53,21 @@ export const AttentSouContent: AttentSouContentType = {
     comptageCibles: {
         title: "Comptage de Cibles",
         description: "Compter combien de fois un élément apparaît"
+    }
+};
+
+export const FonctionExecutives: FonctionExecutivesType = {
+    trailMakingB: {
+        title: "Trail Making B:",
+        description: "Alterner chiffres et lettres (1-A-2-B...)"
+    },
+    tourHanoi: {
+        title: "Tours de Hanoï simplifiée:",
+        description: "Déplacer des disques selon des règles" 
+    },
+    triDeCartes: {
+        title: "Tri de cartes (WCST adapté):",
+        description: "Deviner la règle de tri qui change" 
     }
 };
 

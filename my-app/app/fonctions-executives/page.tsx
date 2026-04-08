@@ -1,24 +1,25 @@
+import { FonctionExecutives } from "@/lib/tasks-content";
 import Link from "next/link";
 
-export default function FonctionsExecutives() {
+export default function FonctionsExecutivesPage() {
     return (
-        <div className="text-slate-100 bg-zinc-800 p-4">
+        <div>
             <h1 className="text-2xl font-bold">Fonctions Executives</h1>
 
             <p className="my-10">Planifier, s'adapter, inhiber les mauvaises réponses</p>
 
             <ul className="list-disc">
                 <li className="m-4">
-                    <Link href="/fonctions-executives/1">Trail Making B: alterner chiffres et lettres (1-A-2-B...)</Link>
+                    <Link href="/fonctions-executives/1">{FonctionExecutives.trailMakingB.title} {FonctionExecutives.trailMakingB.description}</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="/fonctions-executives/2">Tours de Hanoï simplifiée: déplacer des disques selon des règles</Link>
+                    <Link href="/fonctions-executives/2">{FonctionExecutives.tourHanoi.title} {FonctionExecutives.tourHanoi.description}</Link>
                 </li>
                 <li className="m-4">
-                    <Link href="/fonctions-executives/3">Tri de cartes (WCST adapté): deviner la règle de tri qui change</Link>
+                    <Link href="/fonctions-executives/3">{FonctionExecutives.triDeCartes.title} {FonctionExecutives.triDeCartes.description}</Link>
                 </li>
             </ul>
 
         </div>
     )
-}
+};

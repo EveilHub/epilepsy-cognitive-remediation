@@ -1,3 +1,6 @@
+import BarrageSymboles from "@/app/ui/attention-soutenueExo/BarrageSymboles";
+import ComptageCibles from "@/app/ui/attention-soutenueExo/ComptageCibles";
+import CptComp from "@/app/ui/attention-soutenueExo/CptComp";
 import { AttentSouContent } from "@/lib/tasks-content";
 
 export default async function AttentionSoutenueExo({ params }: { params: Promise<{ id: string }> }) {
@@ -8,17 +11,17 @@ export default async function AttentionSoutenueExo({ params }: { params: Promise
         "1": {
             title: AttentSouContent.cpt.title,
             description: AttentSouContent.cpt.description,
-            component: <Truc/>
+            component: <CptComp />
         },
         "2": {
             title: AttentSouContent.barrageSymboles.title,
             description: AttentSouContent.barrageSymboles.description,
-            component: <Truc/>
+            component: <BarrageSymboles />
         },
         "3": {
             title: AttentSouContent.comptageCibles.title,
             description: AttentSouContent.comptageCibles.description,
-            component: <Truc/>
+            component: <ComptageCibles />
         }
     } as const;
     
