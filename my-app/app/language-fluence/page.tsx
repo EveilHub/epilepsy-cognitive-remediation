@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { LanguageFluence } from "@/lib/tasks-content";
 
-export default function LanguageFluence() {
+export default function LanguageFluencePage() {
     return (
         <div>
             <h1 className="text-2xl font-bold">Language et Fluence Verbale</h1>
@@ -10,22 +11,19 @@ export default function LanguageFluence() {
 
                 <nav>
                     <ul className="list-disc">
-                        <li className="hover:text-emerald-600 m-4">
+                        <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
                             <Link href="/language-fluence/1">
-                                <span className="font-bold">Fluence catégorielle:</span>
-                                &nbsp;Nommer le plus d'animaux possible en 1 minute
+                                {LanguageFluence.fluenceCategorielle.title} {LanguageFluence.fluenceCategorielle.description}
                             </Link>
                         </li>
-                        <li className="hover:text-emerald-600 m-4">
+                        <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
                             <Link href="/language-fluence/2">
-                                <span className="font-bold">Fluence littérale:</span>
-                                &nbsp;Nommer des mots commençant pas "P"
+                                {LanguageFluence.fluenceLittérale.title} {LanguageFluence.fluenceLittérale.description}
                             </Link>
                         </li>
-                        <li className="hover:text-emerald-600 m-4">
+                        <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
                             <Link href="/language-fluence/3">
-                                <span className="font-bold">Complétion de phrases:</span>
-                                &nbsp;Trouver le mot manquant
+                                {LanguageFluence.completionDePhrases.title} {LanguageFluence.completionDePhrases.description}
                             </Link>
                         </li>
                     </ul>
@@ -33,5 +31,5 @@ export default function LanguageFluence() {
             </div>
 
         </div>
-    )
-}
+    );
+};

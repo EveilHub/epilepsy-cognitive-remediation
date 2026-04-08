@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MemoTravailContent } from "@/lib/tasks-content";
 
-export default function MemoTravail() {
+export default function MemoTravailPage() {
     return (
         <div>
             <h1 className="text-2xl font-bold">Memoire au Travail</h1>
@@ -11,22 +11,19 @@ export default function MemoTravail() {
 
                 <nav>
                     <ul className="list-disc">
-                        <li className="hover:text-emerald-600 m-4">
+                        <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
                             <Link href="/memo-travail/1">
-                                <span className="font-bold">{MemoTravailContent.sequChiff.title}</span>
-                                &nbsp;{MemoTravailContent.sequChiff.description}
+                                {MemoTravailContent.sequChiff.title} {MemoTravailContent.sequChiff.description}
                             </Link>
                         </li>
-                        <li className="hover:text-emerald-600 m-4">
+                        <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
                             <Link href="/memo-travail/2">
-                                <span className="font-bold">{MemoTravailContent.nback.title}</span>
-                                &nbsp;{MemoTravailContent.nback.description}
+                                {MemoTravailContent.nback.title} {MemoTravailContent.nback.description}
                             </Link>
                         </li>
-                        <li className="hover:text-emerald-600 m-4">
+                        <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
                             <Link href="/memo-travail/3">
-                                <span className="font-bold">{MemoTravailContent.grillePoint.title}</span>
-                                &nbsp;{MemoTravailContent.grillePoint.description}
+                                {MemoTravailContent.grillePoint.title} {MemoTravailContent.grillePoint.description}
                             </Link>
                         </li>
                     </ul>

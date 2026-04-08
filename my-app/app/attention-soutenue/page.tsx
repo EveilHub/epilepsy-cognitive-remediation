@@ -1,23 +1,32 @@
+import { AttentSouContent } from "@/lib/tasks-content";
 import Link from "next/link";
 
-export default function AttentionSoutenue() {
+export default function AttentionSoutenuePage() {
     return (
-        <div className="text-slate-100 bg-zinc-800 p-4">
+        <div>
             <h1 className="text-2xl font-bold">Attention Soutenue</h1>
 
             <p className="my-10">Maintenir sa concentration sur la durée</p>
 
-            <ul className="list-disc">
-                <li className="m-4">
-                    <Link href="/attention-soutenue/1">CPT (continuous Performance Task): appuyer quand une cible apparaît, ignorer les distractions</Link>
-                </li>
-                <li className="m-4">
-                    <Link href="/attention-soutenue/2">Barrage de Symboles: Trouver un symbole cible parmi d'autres</Link>
-                </li>
-                <li className="m-4">
-                    <Link href="/attention-soutenue/3">Comptage de Cibles: Compter combien de fois un élément apparaît</Link>
-                </li>
-            </ul>
+            <nav>
+                <ul className="list-disc">
+                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <Link href="/attention-soutenue/1">
+                            {AttentSouContent.cpt.title} {AttentSouContent.cpt.description}
+                        </Link>
+                    </li>
+                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <Link href="/attention-soutenue/2">
+                            {AttentSouContent.barrageSymboles.title} {AttentSouContent.barrageSymboles.description}
+                        </Link>
+                    </li>
+                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <Link href="/attention-soutenue/3">
+                            {AttentSouContent.comptageCibles.title} {AttentSouContent.comptageCibles.description}
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    )
-}
+    );
+};
