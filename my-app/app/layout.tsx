@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Menu from "./ui/Menu";
 import "./globals.css";
 
-
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -28,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-full flex flex-col">
         <Menu />
-        <main className="w-full h-220 text-emerald-500 bg-white dark:text-purple-500 dark:bg-slate-900 p-10">
+        <main className="w-full h-220 text-emerald-500 bg-white dark:text-teal-300 dark:bg-slate-900 p-10">
           {children}
         </main>
       </body>

@@ -8,14 +8,20 @@ export default function AttentionSelectivePage() {
 
             <p className="my-10">Filtrer les distractions / gérer 2 tâches simultanément</p>
 
-            <ul className="list-disc">
-                <li className="m-4">
-                    <Link href="/attention-selective/1">{AttentionSelectiveContent.stroopAdapted.title} {AttentionSelectiveContent.stroopAdapted.description}</Link>
-                </li>
-                <li className="m-4">
-                    <Link href="/attention-selective/2">{AttentionSelectiveContent.doubleTask.title} {AttentionSelectiveContent.doubleTask.description}</Link>
-                </li>
-            </ul>
+            <nav>
+                <ul className="list-disc">
+                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <Link href="/attention-selective/1">
+                            {AttentionSelectiveContent.stroopAdapted.title} {AttentionSelectiveContent.stroopAdapted.description}
+                        </Link>
+                    </li>
+                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <Link href="/attention-selective/2">
+                            {AttentionSelectiveContent.doubleTask.title} {AttentionSelectiveContent.doubleTask.description}
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
 
         </div>
     );

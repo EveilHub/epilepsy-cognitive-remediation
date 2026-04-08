@@ -8,23 +8,25 @@ export default function VitesseTraitementPage() {
 
             <p className="my-10">Répondre rapidement et précisément</p>
 
-            <ul className="list-disc">
-                <li className="m-4">
-                    <Link href="/vitesse-traitement/1">
-                        {VitesseTraiementContent.tempsReact.title} {VitesseTraiementContent.tempsReact.description}
-                    </Link>
-                </li>
-                <li className="m-4">
-                    <Link href="/vitesse-traitement/2">
-                        {VitesseTraiementContent.matchingFast.title} {VitesseTraiementContent.matchingFast.description}
-                    </Link>
-                </li>
-                <li className="m-4">
-                    <Link href="/vitesse-traitement/3">
-                        {VitesseTraiementContent.trailMakingA.title} {VitesseTraiementContent.trailMakingA.description}
-                    </Link>
-                </li>
-            </ul>
+            <nav>
+                <ul className="list-disc">
+                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <Link href="/vitesse-traitement/1">
+                            {VitesseTraiementContent.tempsReact.title} {VitesseTraiementContent.tempsReact.description}
+                        </Link>
+                    </li>
+                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <Link href="/vitesse-traitement/2">
+                            {VitesseTraiementContent.matchingFast.title} {VitesseTraiementContent.matchingFast.description}
+                        </Link>
+                    </li>
+                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <Link href="/vitesse-traitement/3">
+                            {VitesseTraiementContent.trailMakingA.title} {VitesseTraiementContent.trailMakingA.description}
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
 
         </div>
     )

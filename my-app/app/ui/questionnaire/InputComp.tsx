@@ -20,7 +20,7 @@ export default function InputComp({paragraph, idP, nameP, valueP, onChangeP, wid
                 name={nameP}
                 value={valueP} 
                 onChange={onChangeP} 
-                className={`${widthP} bg-emerald-50 border border-emerald-100 rounded p-2 mr-2`}
+                className={`${widthP} dark:text-teal-400 bg-emerald-50 border border-emerald-100 dark:bg-teal-50 dark:border-teal-100 rounded p-2 mr-2`}
             />
             {minutes}
         </div>

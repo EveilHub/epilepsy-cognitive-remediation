@@ -1,4 +1,5 @@
-import { AttentionSelectiveType, AttentSouContentType, FonctionExecutivesType, MemoEpisodicType, MemoTravailTypes, VitesseTraiementType } from "./definitions";
+import LanguageFluenceExo from "@/app/language-fluence/[id]/page";
+import { AttentionSelectiveType, AttentSouContentType, FonctionExecutivesType, LanguageFluenceType, MemoEpisodicType, MemoTravailTypes, VitesseTraiementType } from "./definitions";
 
 export const MemoTravailContent: MemoTravailTypes = {
     sequChiff: {
@@ -43,16 +44,31 @@ export const AttentionSelectiveContent: AttentionSelectiveType = {
 
 export const AttentSouContent: AttentSouContentType = {
     cpt: {
-        title: "CPT (continuous Performance Task)",
+        title: "CPT (continuous Performance Task):",
         description: "Appuyer quand une cible apparaît, ignorer les distractions"
     },
     barrageSymboles: {
-        title: "Barrage de Symboles",
+        title: "Barrage de Symboles:",
         description: "Trouver un symbole cible parmi d'autres"
     },
     comptageCibles: {
-        title: "Comptage de Cibles",
+        title: "Comptage de Cibles:",
         description: "Compter combien de fois un élément apparaît"
+    }
+};
+
+export const LanguageFluence: LanguageFluenceType = {
+    fluenceCategorielle: {
+        title: "Fluence catégorielle:",
+        description: "Nommer le plus d'animaux possible en 1 minute"
+    },
+    fluenceLittérale: {
+        title: "Fluence littérale:",
+        description: "Nommer des mots commençant pas 'p'"
+    },
+    completionDePhrases: {
+        title: "Complétion de phrases:",
+        description: "Trouver le mot manquant"
     }
 };
 

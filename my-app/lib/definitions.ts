@@ -54,6 +54,21 @@ export type AttentSouContentType = {
     }
 };
 
+export type LanguageFluenceType = {
+    fluenceCategorielle: {
+        title: string;
+        description: string;
+    },
+    fluenceLittérale: {
+        title: string;
+        description: string;
+    },
+    completionDePhrases: {
+        title: string;
+        description: string;
+    }
+};
+
 export type FonctionExecutivesType = {
     trailMakingB: {
         title: string;

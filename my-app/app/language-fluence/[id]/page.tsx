@@ -1,6 +1,7 @@
 import CompletionPhrase from "@/app/ui/language-fluenceExo/CompletionPhrase";
 import FluenceCategorielle from "@/app/ui/language-fluenceExo/FluenceCategorielle";
 import FluenceLitterale from "@/app/ui/language-fluenceExo/FluenceLitterale";
+import { LanguageFluence } from "@/lib/tasks-content";
 
 export default async function LanguageFluenceExo({ params }: { params: Promise<{ id: string }> }) {
     
@@ -8,18 +9,18 @@ export default async function LanguageFluenceExo({ params }: { params: Promise<{
     
     const tasks = {
         "1": {
-            title: "Fluence catégorielle",
-            description: "Nommer le plus d'animaux possible en 1 minute",
+            title: LanguageFluence.fluenceCategorielle.title,
+            description: LanguageFluence.fluenceCategorielle.description,
             component: <FluenceCategorielle />
         },
         "2": {
-            title: "Fluence littérale",
-            description: "Nommer des mots commençant pas 'P'",
+            title: LanguageFluence.fluenceLittérale.title,
+            description: LanguageFluence.fluenceLittérale.description,
             component: <FluenceLitterale />
         },
         "3": {
-            title: "Complétion de phrases",
-            description: "Trouver le mot manquant",
+            title: LanguageFluence.completionDePhrases.title,
+            description: LanguageFluence.completionDePhrases.description,
             component: <CompletionPhrase />
         }
     } as const;
@@ -37,4 +38,4 @@ export default async function LanguageFluenceExo({ params }: { params: Promise<{
             <div className="h-170 border">{task.component}</div>
         </div>
     );
-}
+};
