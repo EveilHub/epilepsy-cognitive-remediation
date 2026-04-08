@@ -1,4 +1,3 @@
-import LanguageFluenceExo from "@/app/language-fluence/[id]/page";
 import { AttentionSelectiveType, AttentSouContentType, FonctionExecutivesType, LanguageFluenceType, MemoEpisodicType, MemoTravailTypes, VitesseTraiementType } from "./definitions";
 
 export const MemoTravailContent: MemoTravailTypes = {

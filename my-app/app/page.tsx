@@ -76,7 +76,7 @@ export default function Home() {
     <div>
 
       <div className="mb-8">
-        <h1 className="text-2xl font-bold">Remédiation cognitive pour l'épilepsie</h1>
+        <h1 className="text-2xl font-bold">Remédiation cognitive pour l&apos;épilepsie</h1>
       </div>
 
       <div className="p-4 border border-emerald-100 rounded-lg">
@@ -372,7 +372,7 @@ export default function Home() {
 
       <div className="flex justify-center">
         <button type="submit" className="text-slate-100 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-400 dark:bg-purple-500 dark:hover:bg-purple-600 dark:active:bg-purple-400 mt-4 px-4 py-2 rounded-lg">
-          Commencer l'entraînement
+          Commencer l&apos;entraînement
         </button>
       </div>
 
