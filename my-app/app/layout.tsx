@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
+import Switcher from "./ui/Switcher";
 import Menu from "./ui/Menu";
 import "./globals.css";
+
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -26,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-full flex flex-col">
+        <Switcher />
         <Menu />
         <main className="w-full h-220 text-emerald-500 bg-white dark:text-teal-300 dark:bg-slate-900 p-10">
           {children}
