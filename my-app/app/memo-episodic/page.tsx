@@ -7,7 +7,7 @@ export default function MemoEpisodiquePage() {
             <h1 className="text-2xl font-bold">Memoire Episodique</h1>
 
             <div className="text-lg pl-4">
-                <p className="my-8">Se souvenir d'événements, d'histoires, de contextes</p>
+                <p className="my-8">Se souvenir d&apos;événements, d&apos;histoires, de contextes</p>
 
                 <nav>
                     <ul className="list-disc">

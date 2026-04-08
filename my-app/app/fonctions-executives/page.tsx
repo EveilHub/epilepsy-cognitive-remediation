@@ -6,7 +6,7 @@ export default function FonctionsExecutivesPage() {
         <div>
             <h1 className="text-2xl font-bold">Fonctions Executives</h1>
 
-            <p className="my-10">Planifier, s'adapter, inhiber les mauvaises réponses</p>
+            <p className="my-10">Planifier, s&apos;adapter, inhiber les mauvaises réponses</p>
 
             <nav>
                 <ul className="list-disc">
