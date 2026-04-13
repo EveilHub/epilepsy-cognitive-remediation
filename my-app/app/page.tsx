@@ -3,6 +3,7 @@
 import { ChangeEvent, useState } from "react";
 import LabelInputOuiNon from "./ui/questionnaire/LabelInputOuiNon";
 import InputComp from "./ui/questionnaire/InputComp";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Home() {
 
@@ -72,17 +73,21 @@ export default function Home() {
   console.log(tttUrgence);
   console.log(reposOuiNon);
 
+  const { chooseLang } = useLanguage();
+
   return (
     <div>
 
       <div className="mb-8">
-        <h1 className="text-2xl font-bold">Remédiation cognitive pour l&apos;épilepsie</h1>
+        <h1 className="text-2xl font-bold">
+          {chooseLang === "FR" ? `Remédiation cognitive pour l'épilepsie` : `Cognitive rehabilitation for epilepsy`}
+        </h1>
       </div>
 
       <div className="p-10 border border-teal-100 dark:border-cyan-600 rounded-lg">
 
         <LabelInputOuiNon 
-          paragraphTxt="Acceptez-vous de réaliser le test et comprenez-vous son but ?"
+          paragraphTxt={chooseLang === "FR" ? "Acceptez-vous de réaliser le test et comprenez-vous son but ?" :  "Do you agree to take the test, and do you understand its purpose?"}
           width="w-50"
 
           htmlForLabelOne="accepterTest"
@@ -91,7 +96,7 @@ export default function Home() {
           valueOne={`test accepté`}
           checkedOne={accepteTest === `test accepté`}
           onChangeOne={handleAccepteTest}
-          textOne="Oui"
+          textOne={chooseLang === "FR" ? "Oui" : "Yes"}
 
           htmlForLabelTwo="refuserTest"
           idTwo="refuserTest"
@@ -99,11 +104,11 @@ export default function Home() {
           valueTwo={`test refusé`}
           checkedTwo={accepteTest === `test refusé`}
           onChangeTwo={handleAccepteTest}
-          textTwo="Non"
+          textTwo={chooseLang === "FR" ? "Non" : "No"}
         />
 
         <LabelInputOuiNon 
-          paragraphTxt="Avez-vous de difficultés cognitives perçues ?"
+          paragraphTxt={chooseLang === "FR" ? "Avez-vous de difficultés cognitives perçues ?" : "Do you have any perceived cognitive difficulties?"}
           width="w-50"
 
           htmlForLabelOne="diffcognitiveOui"
@@ -112,7 +117,7 @@ export default function Home() {
           valueOne={`difficultés cognitves`}
           checkedOne={diffCogniOuiNon === `difficultés cognitves`}
           onChangeOne={handleCognitiveResponse}
-          textOne="Oui"
+          textOne={chooseLang === "FR" ? "Oui" : "Yes"}
 
           htmlForLabelTwo="diffcognitiveNon"
           idTwo="diffcognitiveNon"
@@ -120,7 +125,7 @@ export default function Home() {
           valueTwo={`absence de difficultés cognitives`}
           checkedTwo={diffCogniOuiNon === `absence de difficultés cognitives`}
           onChangeTwo={handleCognitiveResponse}
-          textTwo="Non"
+          textTwo={chooseLang === "FR" ? "Non" : "No"}
         />
 
         {diffCogniOuiNon === "difficultés cognitves" && (
@@ -135,7 +140,7 @@ export default function Home() {
         )}
 
         <LabelInputOuiNon 
-          paragraphTxt="Avez-vous des besoins particuliers ?"
+          paragraphTxt={chooseLang === "FR" ? "Avez-vous des besoins particuliers ?" : "Do you have any special needs?"}
           width="w-50"
 
           htmlForLabelOne="besoinsParticulierOui"
@@ -144,7 +149,7 @@ export default function Home() {
           valueOne={`besoins particuliers`}
           checkedOne={besoinsOuiNon === `besoins particuliers`}
           onChangeOne={handleBesoinsParticuliers}
-          textOne="Oui"
+          textOne={chooseLang === "FR" ? "Oui" : "Yes"}
 
           htmlForLabelTwo="besoinsParticulierNon"
           idTwo="besoinsParticulierNon"
@@ -152,7 +157,7 @@ export default function Home() {
           valueTwo={`absence de besoins particuliers`}
           checkedTwo={besoinsOuiNon === `absence de besoins particuliers`}
           onChangeTwo={handleBesoinsParticuliers}
-          textTwo="Non"
+          textTwo={chooseLang === "FR" ? "Non" : "No"}
         />
 
         {besoinsOuiNon === "besoins particuliers" && (
@@ -167,7 +172,7 @@ export default function Home() {
         )}
 
         <LabelInputOuiNon 
-          paragraphTxt="Êtes-vous suffisamment reposé pour faire le test maintenant ?"
+          paragraphTxt={chooseLang === "FR" ? "Êtes-vous suffisamment reposé pour faire le test maintenant ?" : "Are you well-rested enough to take the test now?"}
           width="w-50"
 
           htmlForLabelOne="reposOui"
@@ -176,7 +181,7 @@ export default function Home() {
           valueOne={`oui reposé`}
           checkedOne={reposOuiNon === `oui reposé`}
           onChangeOne={handleRepos}
-          textOne="Oui"
+          textOne={chooseLang === "FR" ? "Oui" : "Yes"}
 
           htmlForLabelTwo="reposNon"
           idTwo="reposNon"
@@ -184,11 +189,13 @@ export default function Home() {
           valueTwo={`non pas reposé`}
           checkedTwo={reposOuiNon === `non pas reposé`}
           onChangeTwo={handleRepos}
-          textTwo="Non"
+          textTwo={chooseLang === "FR" ? "Non" : "No"}
         />
 
         <InputComp 
-          paragraph="Quel type d’épilepsie vous a-t-on diagnostiqué ? (localisée/focale, généralisée, non classée) ?"
+          paragraph={chooseLang === "FR" 
+            ? "Quel type d’épilepsie vous a-t-on diagnostiqué ? (localisée/focale, généralisée, non classée) ?" 
+            : "What type of epilepsy have you been diagnosed with? (localized/focal, generalized, unclassified)"}
           idP="diagnostic"
           nameP="diagnostic"
           valueP={diagnostic} 
@@ -196,7 +203,9 @@ export default function Home() {
           widthP="w-200"
         />
 
-        <p className="mt-8 mb-4">Combien de crises avez-vous en moyenne par mois ?</p>
+        <p className="mt-8 mb-4">{chooseLang === "FR" 
+          ? "Combien de crises avez-vous en moyenne par mois ?" 
+          : "How many seizures do you have on average per month?"}</p>
 
         <div className="w-150 flex flex-row items-center justify-around py-2 bg-teal-50 border border-teal-100 rounded-lg">
           <label htmlFor="crise0">
@@ -264,7 +273,9 @@ export default function Home() {
         </div>
 
         <LabelInputOuiNon 
-          paragraphTxt="Avez-vous des crises avec ou sans pertes de connaissances ?"
+          paragraphTxt={chooseLang === "FR" 
+            ? "Avez-vous des crises avec ou sans pertes de connaissances ?" 
+            : "Do you have seizures with or without loss of consciousness?"}
           width="w-150"
 
           htmlForLabelOne="avecPerteCo"
@@ -273,7 +284,9 @@ export default function Home() {
           valueOne={`avec perte de connaissance`}
           checkedOne={perteConnaissance === `avec perte de connaissance`}
           onChangeOne={handlePerteCo}
-          textOne="Avec perte de connaissance"
+          textOne={chooseLang === "FR" 
+            ? "Avec perte de connaissance"
+            : "With loss of consciousness"}
 
           htmlForLabelTwo="sansPerteCo"
           idTwo="sansPerteCo"
@@ -281,11 +294,16 @@ export default function Home() {
           valueTwo={`sans perte de connaissance`}
           checkedTwo={perteConnaissance === `sans perte de connaissance`}
           onChangeTwo={handlePerteCo}
-          textTwo="Sans perte de connaissance"
+          textTwo={chooseLang === "FR" 
+            ? "Sans perte de connaissance"
+            : "Without losing consciousness"}
         />
+        
 
         <InputComp 
-          paragraph="Combien de temps les crises durent-elles (en minutes) ?"
+          paragraph={chooseLang === "FR" ?
+            "Combien de temps les crises durent-elles (en minutes) ?"
+            : "How long do the episodes last (in minutes)?"}
           idP="tempsDeCrise"
           nameP="tempsDeCrise"
           valueP={tempsCrise}
@@ -295,7 +313,9 @@ export default function Home() {
         />
 
         <LabelInputOuiNon 
-          paragraphTxt="Prenez-vous un MAE (Médicament Anti Epileptique) ?"
+          paragraphTxt={chooseLang === "FR" 
+            ? "Prenez-vous un MAE (Médicament Anti Epileptique) ?" 
+            : "Are you taking an AED (antiepileptic drug)?"}
           width="w-50"
 
           htmlForLabelOne="ouiMae"
@@ -304,7 +324,7 @@ export default function Home() {
           valueOne={`ttt MAE oui`}
           checkedOne={maettt === `ttt MAE oui`}
           onChangeOne={handleMae}
-          textOne="Oui"
+          textOne={chooseLang === "FR" ? "Oui" : "Yes"}
 
           htmlForLabelTwo="nonMae"
           idTwo="nonMae"
@@ -312,13 +332,15 @@ export default function Home() {
           valueTwo={`ttt MAE non`}
           checkedTwo={maettt === `ttt MAE non`}
           onChangeTwo={handleMae}
-          textTwo="Non"
+          textTwo={chooseLang === "FR" ? "Non" : "No"}
         />
 
         {maettt === "ttt MAE oui" && (
           <>
             <InputComp 
-              paragraph="Comment s'appelle le traitement (MAE) que vous prenez ?"
+              paragraph={chooseLang === "FR" 
+                ? "Comment s'appelle le traitement (MAE) que vous prenez ?"
+                : "What is the name of the medication (MAE) you're taking?"}
               idP="maeName"
               nameP="maeName"
               valueP={nameMae} 
@@ -327,7 +349,9 @@ export default function Home() {
             />
 
             <InputComp 
-              paragraph="A quand date la dernière prise de traitement MAE ?"
+              paragraph={chooseLang === "FR" 
+                ? "A quand date la dernière prise de traitement MAE ?"
+                : "When was the last time you took your MAE medication?"}
               idP="dernierePrise"
               nameP="dernierePrise"
               valueP={dernierePrise} 
@@ -336,7 +360,9 @@ export default function Home() {
             />
 
             <InputComp 
-              paragraph="Quels sont les effets secondaires de vos traitements MAE ?"
+              paragraph={chooseLang === "FR" 
+                ? "Quels sont les effets secondaires de vos traitements MAE ?"
+                : "What are the side effects of your MAE treatments?"}
               idP="sideEffects"
               nameP="sideEffects"
               valueP={sideEffects} 
@@ -347,7 +373,9 @@ export default function Home() {
         )}
 
         <InputComp 
-          paragraph="Si vous avez une crise durant la remédiation cognitive, que devons-nous faire ?"
+          paragraph={chooseLang === "FR" 
+            ? "Si vous avez une crise durant la remédiation cognitive, que devons-nous faire ?"
+            : "If you have a seizure during cognitive remediation, what should we do?"}
           idP="crisePdtRemCo"
           nameP="crisePdtRemCo"
           valueP={crisePdtRemCo} 
@@ -356,7 +384,9 @@ export default function Home() {
         />
 
         <LabelInputOuiNon 
-          paragraphTxt="Avez-vous un traitement d’urgence (midazolam intranasal, etc.) ?"
+          paragraphTxt={chooseLang === "FR" 
+            ? "Avez-vous un traitement d’urgence (midazolam intranasal, etc.) ?"
+            : "Do you have any emergency treatment options (such as intranasal midazolam, etc.)?"}
           width="w-50"
 
           htmlForLabelOne="tttUrgenceOui"
@@ -365,7 +395,7 @@ export default function Home() {
           valueOne={`ttt d'urgence oui`}
           checkedOne={tttUrgence === `ttt d'urgence oui`}
           onChangeOne={handleTttUrgence}
-          textOne="Oui"
+          textOne={chooseLang === "FR" ? "Oui" : "Yes"}
 
           htmlForLabelTwo="tttUrgenceNon"
           idTwo="tttUrgenceNon"
@@ -373,14 +403,14 @@ export default function Home() {
           valueTwo={`ttt d'urgence non`}
           checkedTwo={tttUrgence === `ttt d'urgence non`}
           onChangeTwo={handleTttUrgence}
-          textTwo="Non"
+          textTwo={chooseLang === "FR" ? "Non" : "No"}
         />
 
       </div>
 
       <div className="flex justify-center">
         <button type="submit" className="text-white bg-teal-400 hover:bg-teal-500 active:bg-teal-300 dark:bg-cyan-500 dark:hover:bg-cyan-600 dark:active:bg-cyan-400 mt-4 px-4 py-2 rounded-lg">
-          Commencer l&apos;entraînement
+          {chooseLang === "FR" ? "Enregistrer" : "Subscribe"}
         </button>
       </div>
 

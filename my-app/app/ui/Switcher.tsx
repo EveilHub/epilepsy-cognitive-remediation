@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import DarkModeToggle from "./DarkModeToggle";
 import Image from 'next/image';
+import Translation from "./Translation";
 
 export default function Switcher() {
     return (
@@ -31,7 +34,10 @@ export default function Switcher() {
                             Login
                         </Link>
                     </li>
-                    <li>En/Fr</li>
+                 
+                    <Translation />
+                
+                    
                     <DarkModeToggle />
                 </div>
             </ul>
