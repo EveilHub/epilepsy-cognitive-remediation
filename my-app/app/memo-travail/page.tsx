@@ -11,17 +11,17 @@ export default function MemoTravailPage() {
 
                 <nav>
                     <ul className="list-disc">
-                        <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                             <Link href="/memo-travail/1">
                                 {MemoTravailContent.sequChiff.title} {MemoTravailContent.sequChiff.description}
                             </Link>
                         </li>
-                        <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                             <Link href="/memo-travail/2">
                                 {MemoTravailContent.nback.title} {MemoTravailContent.nback.description}
                             </Link>
                         </li>
-                        <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                             <Link href="/memo-travail/3">
                                 {MemoTravailContent.grillePoint.title} {MemoTravailContent.grillePoint.description}
                             </Link>

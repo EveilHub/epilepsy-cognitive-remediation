@@ -1,28 +1,45 @@
+"use client";
+
 import Link from "next/link";
+import DarkModeToggle from "./DarkModeToggle";
+import Image from 'next/image';
+import Translation from "./Translation";
 
 export default function Switcher() {
     return (
-        <nav className="flex flex-row items-center justify-between text-base font-bold text-slate-100 bg-emerald-500 dark:text-teal-300 dark:bg-slate-700 px-4 py-6">
-            <ul className="w-[80%] flex items-center justify-around border">
-                <li>
-                    <Link href="/patient">
-                        Patient
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/scores">
-                        Scores
-                    </Link>
-                </li>
-            </ul>
-            <ul className="w-[20%] flex flex-row items-center justify-around border">
-                <li>
-                    <Link href="/login">
-                        Login
-                    </Link>
-                </li>
-                <li>En/Fr</li>
-                <li>Darkmode</li>
+        <nav className="flex flex-row items-end justify-between text-base text-slate-100 bg-teal-500 dark:text-cyan-300 dark:bg-slate-700 py-3">
+            <ul className="w-full flex flex-row items-center justify-between mx-10">
+                <div className="relative flex items-center justify-start w-[70%] h-[40px] rounded-full">
+                    <Image
+                        src="/images/psy-logo.jpg"
+                        width={500}
+                        height={500}
+                        alt="Logo of Site"
+                        className="absolute w-[40px] h-auto rounded-full"
+                    />
+                </div>
+                <div className="w-[30%] flex items-center justify-between">
+                    <li>
+                        <Link href="/patient" className="dark:hover:text-cyan-500">
+                            Patient
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/scores" className="dark:hover:text-cyan-500">
+                            Scores
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/login" className="dark:hover:text-cyan-500">
+                            Login
+                        </Link>
+                    </li>
+                 
+                    <Translation />
+                
+                    
+                    <DarkModeToggle />
+                </div>
             </ul>
         </nav>
     );

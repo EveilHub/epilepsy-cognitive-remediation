@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
+import ThemeProvider from "./ui/ThemeProvider";
+import { LanguageProvider } from "@/context/LanguageContext";
 import Switcher from "./ui/Switcher";
 import Menu from "./ui/Menu";
 import "./globals.css";
-
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 export const metadata: Metadata = {
   title: "Epi-Neuro-Psy Cognitive",
@@ -26,13 +16,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" style={{colorScheme:"dark"}}>
       <body className="min-h-full flex flex-col">
-        <Switcher />
-        <Menu />
-        <main className="w-full h-220 text-emerald-500 bg-white dark:text-teal-300 dark:bg-slate-900 p-10">
-          {children}
-        </main>
+        <ThemeProvider>
+          <LanguageProvider>
+            <Switcher />
+            {/* <Translation /> */}
+            <Menu />
+            <main className="w-full min-h-screen text-teal-500 bg-white dark:text-cyan-400 dark:bg-slate-900 p-10">
+              {children}
+            </main>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
