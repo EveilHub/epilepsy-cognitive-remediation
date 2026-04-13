@@ -10,12 +10,12 @@ export default function AttentionSelectivePage() {
 
             <nav>
                 <ul className="list-disc">
-                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                    <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                         <Link href="/attention-selective/1">
                             {AttentionSelectiveContent.stroopAdapted.title} {AttentionSelectiveContent.stroopAdapted.description}
                         </Link>
                     </li>
-                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                    <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                         <Link href="/attention-selective/2">
                             {AttentionSelectiveContent.doubleTask.title} {AttentionSelectiveContent.doubleTask.description}
                         </Link>

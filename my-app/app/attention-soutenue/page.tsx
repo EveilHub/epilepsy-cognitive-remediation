@@ -10,17 +10,17 @@ export default function AttentionSoutenuePage() {
 
             <nav>
                 <ul className="list-disc">
-                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                    <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                         <Link href="/attention-soutenue/1">
                             {AttentSouContent.cpt.title} {AttentSouContent.cpt.description}
                         </Link>
                     </li>
-                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                    <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                         <Link href="/attention-soutenue/2">
                             {AttentSouContent.barrageSymboles.title} {AttentSouContent.barrageSymboles.description}
                         </Link>
                     </li>
-                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                    <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                         <Link href="/attention-soutenue/3">
                             {AttentSouContent.comptageCibles.title} {AttentSouContent.comptageCibles.description}
                         </Link>

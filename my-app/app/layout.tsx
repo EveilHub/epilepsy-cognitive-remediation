@@ -31,7 +31,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Switcher />
           <Menu />
-          <main className="w-full min-h-screen text-teal-500 bg-white dark:text-teal-300 dark:bg-slate-900 p-10">
+          <main className="w-full min-h-screen text-teal-500 bg-white dark:text-cyan-400 dark:bg-slate-900 p-10">
             {children}
           </main>
         </ThemeProvider>

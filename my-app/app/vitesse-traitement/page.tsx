@@ -10,17 +10,17 @@ export default function VitesseTraitementPage() {
 
             <nav>
                 <ul className="list-disc">
-                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                    <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                         <Link href="/vitesse-traitement/1">
                             {VitesseTraiementContent.tempsReact.title} {VitesseTraiementContent.tempsReact.description}
                         </Link>
                     </li>
-                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                    <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                         <Link href="/vitesse-traitement/2">
                             {VitesseTraiementContent.matchingFast.title} {VitesseTraiementContent.matchingFast.description}
                         </Link>
                     </li>
-                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                    <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                         <Link href="/vitesse-traitement/3">
                             {VitesseTraiementContent.trailMakingA.title} {VitesseTraiementContent.trailMakingA.description}
                         </Link>

@@ -79,7 +79,7 @@ export default function Home() {
         <h1 className="text-2xl font-bold">Remédiation cognitive pour l&apos;épilepsie</h1>
       </div>
 
-      <div className="p-4 border border-emerald-100 rounded-lg">
+      <div className="p-10 border border-teal-100 dark:border-cyan-600 rounded-lg">
 
         <LabelInputOuiNon 
           paragraphTxt="Acceptez-vous de réaliser le test et comprenez-vous son but ?"
@@ -123,14 +123,16 @@ export default function Home() {
           textTwo="Non"
         />
 
-        <InputComp 
-          paragraph="Si oui, lesquelles ?"
-          idP="diffCognitives"
-          nameP="diffCognitives"
-          valueP={diffCognitives} 
-          onChangeP={(e) => setDiffCognitives(e.target.value)}
-          widthP="w-200"
-        />
+        {diffCogniOuiNon === "difficultés cognitves" && (
+          <InputComp 
+            paragraph="Si oui, lesquelles ?"
+            idP="diffCognitives"
+            nameP="diffCognitives"
+            valueP={diffCognitives} 
+            onChangeP={(e) => setDiffCognitives(e.target.value)}
+            widthP="w-200"
+          />
+        )}
 
         <LabelInputOuiNon 
           paragraphTxt="Avez-vous des besoins particuliers ?"
@@ -153,14 +155,16 @@ export default function Home() {
           textTwo="Non"
         />
 
-        <InputComp 
-          paragraph="Si oui, lesquelles ?"
-          idP="besoinsParticuliers"
-          nameP="besoinsParticuliers"
-          valueP={besoinsParticuliers} 
-          onChangeP={(e) => setBesoinsParticuliers(e.target.value)}
-          widthP="w-200"
-        />
+        {besoinsOuiNon === "besoins particuliers" && (
+          <InputComp 
+            paragraph="Si oui, lesquelles ?"
+            idP="besoinsParticuliers"
+            nameP="besoinsParticuliers"
+            valueP={besoinsParticuliers} 
+            onChangeP={(e) => setBesoinsParticuliers(e.target.value)}
+            widthP="w-200"
+          />
+        )}
 
         <LabelInputOuiNon 
           paragraphTxt="Êtes-vous suffisamment reposé pour faire le test maintenant ?"
@@ -194,7 +198,7 @@ export default function Home() {
 
         <p className="mt-8 mb-4">Combien de crises avez-vous en moyenne par mois ?</p>
 
-        <div className="w-150 flex flex-row items-center justify-around py-2 bg-emerald-50 border border-emerald-100 rounded-lg">
+        <div className="w-150 flex flex-row items-center justify-around py-2 bg-teal-50 border border-teal-100 rounded-lg">
           <label htmlFor="crise0">
             <input 
               type="radio"
@@ -311,32 +315,36 @@ export default function Home() {
           textTwo="Non"
         />
 
-        <InputComp 
-          paragraph="Comment s'appelle le traitement (MAE) que vous prenez ?"
-          idP="maeName"
-          nameP="maeName"
-          valueP={nameMae} 
-          onChangeP={(e) => setNameMae(e.target.value)}
-          widthP="w-150"
-        />
+        {maettt === "ttt MAE oui" && (
+          <>
+            <InputComp 
+              paragraph="Comment s'appelle le traitement (MAE) que vous prenez ?"
+              idP="maeName"
+              nameP="maeName"
+              valueP={nameMae} 
+              onChangeP={(e) => setNameMae(e.target.value)}
+              widthP="w-150"
+            />
 
-        <InputComp 
-          paragraph="A quand date la dernière prise de traitement MAE ?"
-          idP="dernierePrise"
-          nameP="dernierePrise"
-          valueP={dernierePrise} 
-          onChangeP={(e) => setDernierePrise(e.target.value)}
-          widthP="w-50"
-        />
+            <InputComp 
+              paragraph="A quand date la dernière prise de traitement MAE ?"
+              idP="dernierePrise"
+              nameP="dernierePrise"
+              valueP={dernierePrise} 
+              onChangeP={(e) => setDernierePrise(e.target.value)}
+              widthP="w-50"
+            />
 
-        <InputComp 
-          paragraph="Quels sont les effets secondaires de vos traitements MAE ?"
-          idP="sideEffects"
-          nameP="sideEffects"
-          valueP={sideEffects} 
-          onChangeP={(e) => setSideEffects(e.target.value)}
-          widthP="w-300"
-        />
+            <InputComp 
+              paragraph="Quels sont les effets secondaires de vos traitements MAE ?"
+              idP="sideEffects"
+              nameP="sideEffects"
+              valueP={sideEffects} 
+              onChangeP={(e) => setSideEffects(e.target.value)}
+              widthP="w-300"
+            />
+          </>
+        )}
 
         <InputComp 
           paragraph="Si vous avez une crise durant la remédiation cognitive, que devons-nous faire ?"
@@ -371,7 +379,7 @@ export default function Home() {
       </div>
 
       <div className="flex justify-center">
-        <button type="submit" className="text-slate-100 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-400 dark:bg-purple-500 dark:hover:bg-purple-600 dark:active:bg-purple-400 mt-4 px-4 py-2 rounded-lg">
+        <button type="submit" className="text-white bg-teal-400 hover:bg-teal-500 active:bg-teal-300 dark:bg-cyan-500 dark:hover:bg-cyan-600 dark:active:bg-cyan-400 mt-4 px-4 py-2 rounded-lg">
           Commencer l&apos;entraînement
         </button>
       </div>

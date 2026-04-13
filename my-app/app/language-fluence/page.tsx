@@ -11,17 +11,17 @@ export default function LanguageFluencePage() {
 
                 <nav>
                     <ul className="list-disc">
-                        <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                             <Link href="/language-fluence/1">
                                 {LanguageFluence.fluenceCategorielle.title} {LanguageFluence.fluenceCategorielle.description}
                             </Link>
                         </li>
-                        <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                             <Link href="/language-fluence/2">
                                 {LanguageFluence.fluenceLittérale.title} {LanguageFluence.fluenceLittérale.description}
                             </Link>
                         </li>
-                        <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                        <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                             <Link href="/language-fluence/3">
                                 {LanguageFluence.completionDePhrases.title} {LanguageFluence.completionDePhrases.description}
                             </Link>

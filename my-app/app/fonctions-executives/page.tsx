@@ -10,17 +10,17 @@ export default function FonctionsExecutivesPage() {
 
             <nav>
                 <ul className="list-disc">
-                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                    <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                         <Link href="/fonctions-executives/1">
                             {FonctionExecutives.trailMakingB.title} {FonctionExecutives.trailMakingB.description}
                         </Link>
                     </li>
-                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                    <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                         <Link href="/fonctions-executives/2">
                             {FonctionExecutives.tourHanoi.title} {FonctionExecutives.tourHanoi.description}
                         </Link>
                     </li>
-                    <li className="hover:text-emerald-600 dark:hover:text-teal-500 m-4">
+                    <li className="hover:text-teal-600 dark:hover:text-cyan-500 m-4">
                         <Link href="/fonctions-executives/3">
                             {FonctionExecutives.triDeCartes.title} {FonctionExecutives.triDeCartes.description}
                         </Link>
