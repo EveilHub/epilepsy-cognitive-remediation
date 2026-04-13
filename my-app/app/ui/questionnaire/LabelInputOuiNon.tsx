@@ -42,7 +42,7 @@ export default function LabelInputOuiNon(
         <div>
             <p className={`${idOne === "accepterTest" ? "mt-0" : "mt-8"} mb-4`}>{paragraphTxt}</p>
 
-            <div className={`${width} flex flex-row items-center justify-around py-2 bg-emerald-50 border border-emerald-100 dark:text-teal-400 dark:bg-teal-50 dark:border-teal-100 rounded-lg`}>
+            <div className={`${width} flex flex-row items-center justify-around py-2 bg-teal-50 border border-teal-100 dark:text-teal-400 dark:bg-teal-50 dark:border-teal-100 rounded-lg`}>
 
                 <label htmlFor={htmlForLabelOne}>
                 <input 
