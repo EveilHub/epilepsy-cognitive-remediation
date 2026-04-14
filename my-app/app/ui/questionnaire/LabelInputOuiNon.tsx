@@ -5,17 +5,15 @@ type LabelInputOuiNonTypes = {
     width: string;
     htmlForLabelOne: string;
     idOne: string;
-    nameOne: string;
+    name: string;
     valueOne: string;
     checkedOne: boolean;
     onChangeOne: (e: ChangeEvent<HTMLInputElement>) => void;
     textOne: string;
     htmlForLabelTwo: string;
     idTwo: string;
-    nameTwo: string;
     valueTwo: string;
     checkedTwo: boolean;
-    onChangeTwo: (e: ChangeEvent<HTMLInputElement>) => void;
     textTwo: string;
 };
 
@@ -23,19 +21,17 @@ export default function LabelInputOuiNon(
     {
         paragraphTxt, 
         width,
+        name,
         htmlForLabelOne,
         idOne,
-        nameOne,
         valueOne,
         checkedOne,
         onChangeOne,
         textOne,
         htmlForLabelTwo,
         idTwo,
-        nameTwo,
         valueTwo,
         checkedTwo,
-        onChangeTwo,
         textTwo
     }: LabelInputOuiNonTypes) {
     return (
@@ -48,7 +44,7 @@ export default function LabelInputOuiNon(
                 <input 
                     type="radio"
                     id={idOne}
-                    name={nameOne}
+                    name={name}
                     value={valueOne}
                     checked={checkedOne}
                     onChange={onChangeOne}
@@ -61,10 +57,10 @@ export default function LabelInputOuiNon(
                 <input 
                     type="radio"
                     id={idTwo}
-                    name={nameTwo}
+                    name={name}
                     value={valueTwo}
                     checked={checkedTwo}
-                    onChange={onChangeTwo}
+                    onChange={onChangeOne}
                     className="mr-2"
                 />
                 {textTwo}
