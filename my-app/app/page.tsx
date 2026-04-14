@@ -1,29 +1,10 @@
 "use client";
 
+import { DataType } from "@/lib/definitions";
 import { ChangeEvent, FormEvent, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 import LabelInputOuiNon from "./ui/questionnaire/LabelInputOuiNon";
 import InputComp from "./ui/questionnaire/InputComp";
-import { useLanguage } from "@/context/LanguageContext";
-
-type DataType = {
-  crisesState: string;
-  tempsCrise: string;
-  perteConnaissance: string;
-  maettt: string;
-  nameMae: string;
-  accepteTest: string;
-  diffCognitives: string;
-  diffCogniOuiNon: string;
-  diagnostic: string;
-  dernierePrise: string;
-  sideEffects: string;
-  crisePdtRemCo: string;
-  besoinsOuiNon: string;
-  besoinsParticuliers: string;
-  tttUrgence: string;
-  reposOuiNon: string;
-  tttUrgenceName: string;
-};
 
 export default function Home() {
 

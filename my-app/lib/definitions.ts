@@ -1,3 +1,23 @@
+export type DataType = {
+  crisesState: string;
+  tempsCrise: string;
+  perteConnaissance: string;
+  maettt: string;
+  nameMae: string;
+  accepteTest: string;
+  diffCognitives: string;
+  diffCogniOuiNon: string;
+  diagnostic: string;
+  dernierePrise: string;
+  sideEffects: string;
+  crisePdtRemCo: string;
+  besoinsOuiNon: string;
+  besoinsParticuliers: string;
+  tttUrgence: string;
+  reposOuiNon: string;
+  tttUrgenceName: string;
+};
+
 export type MemoTravailTypes = {
     sequChiff: {
         title: string;
