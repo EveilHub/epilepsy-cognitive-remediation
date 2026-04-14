@@ -16,14 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" style={{colorScheme:"dark"}}>
+    <html lang="en" suppressHydrationWarning>
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
           <LanguageProvider>
             <Switcher />
             {/* <Translation /> */}
             <Menu />
-            <main className="w-full min-h-screen text-teal-500 bg-white dark:text-cyan-400 dark:bg-slate-900 p-10">
+            <main className="w-full min-h-[calc(100vh-155px)] text-teal-500 bg-white dark:text-cyan-400 dark:bg-slate-900 p-10">
               {children}
             </main>
           </LanguageProvider>
