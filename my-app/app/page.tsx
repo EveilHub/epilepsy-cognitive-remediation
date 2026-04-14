@@ -1,82 +1,76 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import LabelInputOuiNon from "./ui/questionnaire/LabelInputOuiNon";
 import InputComp from "./ui/questionnaire/InputComp";
 import { useLanguage } from "@/context/LanguageContext";
 
+type DataType = {
+  crisesState: string;
+  tempsCrise: string;
+  perteConnaissance: string;
+  maettt: string;
+  nameMae: string;
+  accepteTest: string;
+  diffCognitives: string;
+  diffCogniOuiNon: string;
+  diagnostic: string;
+  dernierePrise: string;
+  sideEffects: string;
+  crisePdtRemCo: string;
+  besoinsOuiNon: string;
+  besoinsParticuliers: string;
+  tttUrgence: string;
+  reposOuiNon: string;
+  tttUrgenceName: string;
+};
+
 export default function Home() {
-
-  const [crisesState, setCrisesState] = useState<string | undefined>(undefined);
-  const [tempsCrise, setTempsCrise] = useState<string>("");
-  const [perteConnaissance, setPerteConnaissance] = useState<string | undefined>(undefined);
-  const [maettt, setMaettt] = useState<string | undefined>(undefined);
-  const [nameMae, setNameMae] = useState<string>("");
-  const [accepteTest, setAccepteTest] = useState<string | undefined>(undefined);
-  const [diffCognitives, setDiffCognitives] = useState<string>("");
-  const [diffCogniOuiNon, setDiffCogniOuiNon] = useState<string | undefined>(undefined);
-  const [diagnostic, setDiagnostic] = useState<string>("");
-  const [dernierePrise, setDernierePrise] = useState<string>("");
-  const [sideEffects, setSideEffects] = useState<string>("");
-  const [crisePdtRemCo, setCrisePdtRemCo] = useState<string>("");
-  const [besoinsOuiNon, setBesoinsOuiNon] = useState<string | undefined>(undefined);
-  const [besoinsParticuliers, setBesoinsParticuliers] = useState<string>("");
-  const [tttUrgence, setTttUrgence] = useState<string | undefined>(undefined);
-  const [reposOuiNon, setReposOuiNon] = useState<string | undefined>(undefined);
-
-  const handleCrises = (e: ChangeEvent<HTMLInputElement>): void => {
-    setCrisesState(e.target.value);
-  };
-
-  const handlePerteCo = (e: ChangeEvent<HTMLInputElement>): void => {
-    setPerteConnaissance(e.target.value);
-  };
-
-  const handleMae = (e: ChangeEvent<HTMLInputElement>): void => {
-    setMaettt(e.target.value);
-  };
-
-  const handleAccepteTest = (e: ChangeEvent<HTMLInputElement>): void => {
-    setAccepteTest(e.target.value);
-  };
-
-  const handleCognitiveResponse = (e: ChangeEvent<HTMLInputElement>): void => {
-    setDiffCogniOuiNon(e.target.value);
-  };
-
-  const handleBesoinsParticuliers = (e: ChangeEvent<HTMLInputElement>): void => {
-    setBesoinsOuiNon(e.target.value);
-  };
-
-  const handleTttUrgence = (e: ChangeEvent<HTMLInputElement>): void => {
-    setTttUrgence(e.target.value);
-  };
-
-  const handleRepos = (e: ChangeEvent<HTMLInputElement>): void => {
-    setReposOuiNon(e.target.value);
-  };
-
-  console.log(crisesState);
-  console.log(tempsCrise);
-  console.log(perteConnaissance);
-  console.log(maettt);
-  console.log(nameMae);
-  console.log(accepteTest);
-  console.log(diffCognitives);
-  console.log(diffCogniOuiNon);
-  console.log(diagnostic);
-  console.log(dernierePrise);
-  console.log(sideEffects);
-  console.log(crisePdtRemCo);
-  console.log(besoinsOuiNon);
-  console.log(besoinsParticuliers);
-  console.log(tttUrgence);
-  console.log(reposOuiNon);
 
   const { chooseLang } = useLanguage();
 
+  const [data, setData] = useState<DataType>({
+    crisesState: "",
+    tempsCrise: "",
+    perteConnaissance: "",
+    maettt: "",
+    nameMae: "",
+    accepteTest: "",
+    diffCognitives: "",
+    diffCogniOuiNon: "",
+    diagnostic: "",
+    dernierePrise: "",
+    sideEffects: "",
+    crisePdtRemCo: "",
+    besoinsOuiNon: "",
+    besoinsParticuliers: "",
+    tttUrgence: "",
+    reposOuiNon: "",
+    tttUrgenceName: ""
+  });
+
+  const handleAllData = (e: ChangeEvent<HTMLInputElement>): void => {
+    setData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmitHome = (e: FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    const formData: DataType = data;
+
+    // await fetch('/api/patient', { 
+    //     method: 'POST', 
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(allFormData) 
+    // });
+
+    console.log(formData)
+  };
+
   return (
-    <div>
+    <form onSubmit={(e) => handleSubmitHome(e)}>
 
       <div className="mb-8">
         <h1 className="text-2xl font-bold">
@@ -90,20 +84,18 @@ export default function Home() {
           paragraphTxt={chooseLang === "FR" ? "Acceptez-vous de réaliser le test et comprenez-vous son but ?" :  "Do you agree to take the test, and do you understand its purpose?"}
           width="w-50"
 
+          name="accepteTest"
+
           htmlForLabelOne="accepterTest"
           idOne="accepterTest"
-          nameOne="accepterTest"
           valueOne={`test accepté`}
-          checkedOne={accepteTest === `test accepté`}
-          onChangeOne={handleAccepteTest}
+          checkedOne={data.accepteTest === `test accepté`}
+          onChangeOne={handleAllData}
           textOne={chooseLang === "FR" ? "Oui" : "Yes"}
-
           htmlForLabelTwo="refuserTest"
           idTwo="refuserTest"
-          nameTwo="refuserTest"
           valueTwo={`test refusé`}
-          checkedTwo={accepteTest === `test refusé`}
-          onChangeTwo={handleAccepteTest}
+          checkedTwo={data.accepteTest === `test refusé`}
           textTwo={chooseLang === "FR" ? "Non" : "No"}
         />
 
@@ -113,28 +105,26 @@ export default function Home() {
 
           htmlForLabelOne="diffcognitiveOui"
           idOne="diffcognitiveOui"
-          nameOne="diffcognitiveOui"
+          name="diffCogniOuiNon"
           valueOne={`difficultés cognitves`}
-          checkedOne={diffCogniOuiNon === `difficultés cognitves`}
-          onChangeOne={handleCognitiveResponse}
+          checkedOne={data.diffCogniOuiNon === `difficultés cognitves`}
+          onChangeOne={handleAllData}
           textOne={chooseLang === "FR" ? "Oui" : "Yes"}
 
           htmlForLabelTwo="diffcognitiveNon"
           idTwo="diffcognitiveNon"
-          nameTwo="diffcognitiveNon"
           valueTwo={`absence de difficultés cognitives`}
-          checkedTwo={diffCogniOuiNon === `absence de difficultés cognitives`}
-          onChangeTwo={handleCognitiveResponse}
+          checkedTwo={data.diffCogniOuiNon === `absence de difficultés cognitives`}
           textTwo={chooseLang === "FR" ? "Non" : "No"}
         />
 
-        {diffCogniOuiNon === "difficultés cognitves" && (
+        {data.diffCogniOuiNon === "difficultés cognitves" && (
           <InputComp 
             paragraph="Si oui, lesquelles ?"
             idP="diffCognitives"
             nameP="diffCognitives"
-            valueP={diffCognitives} 
-            onChangeP={(e) => setDiffCognitives(e.target.value)}
+            valueP={data.diffCognitives} 
+            onChangeP={handleAllData}
             widthP="w-200"
           />
         )}
@@ -145,28 +135,26 @@ export default function Home() {
 
           htmlForLabelOne="besoinsParticulierOui"
           idOne="besoinsParticulierOui"
-          nameOne="besoinsParticulierOui"
+          name="besoinsOuiNon"
           valueOne={`besoins particuliers`}
-          checkedOne={besoinsOuiNon === `besoins particuliers`}
-          onChangeOne={handleBesoinsParticuliers}
+          checkedOne={data.besoinsOuiNon === `besoins particuliers`}
+          onChangeOne={handleAllData}
           textOne={chooseLang === "FR" ? "Oui" : "Yes"}
 
           htmlForLabelTwo="besoinsParticulierNon"
           idTwo="besoinsParticulierNon"
-          nameTwo="besoinsParticulierNon"
           valueTwo={`absence de besoins particuliers`}
-          checkedTwo={besoinsOuiNon === `absence de besoins particuliers`}
-          onChangeTwo={handleBesoinsParticuliers}
+          checkedTwo={data.besoinsOuiNon === `absence de besoins particuliers`}
           textTwo={chooseLang === "FR" ? "Non" : "No"}
         />
 
-        {besoinsOuiNon === "besoins particuliers" && (
+        {data.besoinsOuiNon === "besoins particuliers" && (
           <InputComp 
             paragraph="Si oui, lesquelles ?"
             idP="besoinsParticuliers"
             nameP="besoinsParticuliers"
-            valueP={besoinsParticuliers} 
-            onChangeP={(e) => setBesoinsParticuliers(e.target.value)}
+            valueP={data.besoinsParticuliers} 
+            onChangeP={handleAllData}
             widthP="w-200"
           />
         )}
@@ -177,18 +165,16 @@ export default function Home() {
 
           htmlForLabelOne="reposOui"
           idOne="reposOui"
-          nameOne="reposOui"
+          name="reposOuiNon"
           valueOne={`oui reposé`}
-          checkedOne={reposOuiNon === `oui reposé`}
-          onChangeOne={handleRepos}
+          checkedOne={data.reposOuiNon === `oui reposé`}
+          onChangeOne={handleAllData}
           textOne={chooseLang === "FR" ? "Oui" : "Yes"}
 
           htmlForLabelTwo="reposNon"
           idTwo="reposNon"
-          nameTwo="reposNon"
           valueTwo={`non pas reposé`}
-          checkedTwo={reposOuiNon === `non pas reposé`}
-          onChangeTwo={handleRepos}
+          checkedTwo={data.reposOuiNon === `non pas reposé`}
           textTwo={chooseLang === "FR" ? "Non" : "No"}
         />
 
@@ -198,8 +184,8 @@ export default function Home() {
             : "What type of epilepsy have you been diagnosed with? (localized/focal, generalized, unclassified)"}
           idP="diagnostic"
           nameP="diagnostic"
-          valueP={diagnostic} 
-          onChangeP={(e) => setDiagnostic(e.target.value)}
+          valueP={data.diagnostic} 
+          onChangeP={handleAllData}
           widthP="w-200"
         />
 
@@ -212,10 +198,10 @@ export default function Home() {
             <input 
               type="radio"
               id="crise0" 
-              name="crise0"
+              name="crisesState"
               value={`aucune crise`}
-              checked={crisesState === `aucune crise`}
-              onChange={handleCrises}
+              checked={data.crisesState === `aucune crise`}
+              onChange={handleAllData}
               className="mr-2"
             />
             aucune
@@ -225,10 +211,10 @@ export default function Home() {
             <input 
               type="radio"
               id="crise1" 
-              name="crise1"
+              name="crisesState"
               value="1-2 crise"
-              checked={crisesState === "1-2 crise"}
-              onChange={handleCrises}
+              checked={data.crisesState === "1-2 crise"}
+              onChange={handleAllData}
               className="mr-2"
             />
             1-2
@@ -237,10 +223,10 @@ export default function Home() {
             <input 
               type="radio"
               id="crise2" 
-              name="crise2"
+              name="crisesState"
               value="2-3 crises"
-              checked={crisesState === "2-3 crises"}
-              onChange={handleCrises}
+              checked={data.crisesState === "2-3 crises"}
+              onChange={handleAllData}
               className="mr-2"
             />
             2-3
@@ -250,10 +236,10 @@ export default function Home() {
             <input 
               type="radio"
               id="crise3" 
-              name="crise3"
+              name="crisesState"
               value="3-4 crises"
-              checked={crisesState === "3-4 crises"}
-              onChange={handleCrises}
+              checked={data.crisesState === "3-4 crises"}
+              onChange={handleAllData}
               className="mr-2"
             />
             3-4
@@ -262,10 +248,10 @@ export default function Home() {
             <input 
               type="radio"
               id="crise4" 
-              name="crise4"
+              name="crisesState"
               value="+ de 4 crises"
-              checked={crisesState === "+ de 4 crises"}
-              onChange={handleCrises}
+              checked={data.crisesState === "+ de 4 crises"}
+              onChange={handleAllData}
               className="mr-2"
             />
             + de 4 crises
@@ -280,34 +266,31 @@ export default function Home() {
 
           htmlForLabelOne="avecPerteCo"
           idOne="avecPerteCo"
-          nameOne="avecPerteCo"
+          name="perteConnaissance"
           valueOne={`avec perte de connaissance`}
-          checkedOne={perteConnaissance === `avec perte de connaissance`}
-          onChangeOne={handlePerteCo}
+          checkedOne={data.perteConnaissance === `avec perte de connaissance`}
+          onChangeOne={handleAllData}
           textOne={chooseLang === "FR" 
             ? "Avec perte de connaissance"
             : "With loss of consciousness"}
 
           htmlForLabelTwo="sansPerteCo"
           idTwo="sansPerteCo"
-          nameTwo="sansPerteCo"
           valueTwo={`sans perte de connaissance`}
-          checkedTwo={perteConnaissance === `sans perte de connaissance`}
-          onChangeTwo={handlePerteCo}
+          checkedTwo={data.perteConnaissance === `sans perte de connaissance`}
           textTwo={chooseLang === "FR" 
             ? "Sans perte de connaissance"
             : "Without losing consciousness"}
         />
         
-
         <InputComp 
           paragraph={chooseLang === "FR" ?
             "Combien de temps les crises durent-elles (en minutes) ?"
             : "How long do the episodes last (in minutes)?"}
           idP="tempsDeCrise"
-          nameP="tempsDeCrise"
-          valueP={tempsCrise}
-          onChangeP={(e) => setTempsCrise(e.target.value)}
+          nameP="tempsCrise"
+          valueP={data.tempsCrise}
+          onChangeP={handleAllData}
           widthP="w-10"
           minutes="minutes"
         />
@@ -320,31 +303,29 @@ export default function Home() {
 
           htmlForLabelOne="ouiMae"
           idOne="ouiMae"
-          nameOne="ouiMae"
+          name="maettt"
           valueOne={`ttt MAE oui`}
-          checkedOne={maettt === `ttt MAE oui`}
-          onChangeOne={handleMae}
+          checkedOne={data.maettt === `ttt MAE oui`}
+          onChangeOne={handleAllData}
           textOne={chooseLang === "FR" ? "Oui" : "Yes"}
 
           htmlForLabelTwo="nonMae"
           idTwo="nonMae"
-          nameTwo="nonMae"
           valueTwo={`ttt MAE non`}
-          checkedTwo={maettt === `ttt MAE non`}
-          onChangeTwo={handleMae}
+          checkedTwo={data.maettt === `ttt MAE non`}
           textTwo={chooseLang === "FR" ? "Non" : "No"}
         />
 
-        {maettt === "ttt MAE oui" && (
+        {data.maettt === "ttt MAE oui" && (
           <>
             <InputComp 
               paragraph={chooseLang === "FR" 
                 ? "Comment s'appelle le traitement (MAE) que vous prenez ?"
                 : "What is the name of the medication (MAE) you're taking?"}
               idP="maeName"
-              nameP="maeName"
-              valueP={nameMae} 
-              onChangeP={(e) => setNameMae(e.target.value)}
+              nameP="nameMae"
+              valueP={data.nameMae} 
+              onChangeP={handleAllData}
               widthP="w-150"
             />
 
@@ -354,8 +335,8 @@ export default function Home() {
                 : "When was the last time you took your MAE medication?"}
               idP="dernierePrise"
               nameP="dernierePrise"
-              valueP={dernierePrise} 
-              onChangeP={(e) => setDernierePrise(e.target.value)}
+              valueP={data.dernierePrise} 
+              onChangeP={handleAllData}
               widthP="w-50"
             />
 
@@ -365,8 +346,8 @@ export default function Home() {
                 : "What are the side effects of your MAE treatments?"}
               idP="sideEffects"
               nameP="sideEffects"
-              valueP={sideEffects} 
-              onChangeP={(e) => setSideEffects(e.target.value)}
+              valueP={data.sideEffects} 
+              onChangeP={handleAllData}
               widthP="w-300"
             />
           </>
@@ -378,8 +359,8 @@ export default function Home() {
             : "If you have a seizure during cognitive remediation, what should we do?"}
           idP="crisePdtRemCo"
           nameP="crisePdtRemCo"
-          valueP={crisePdtRemCo} 
-          onChangeP={(e) => setCrisePdtRemCo(e.target.value)}
+          valueP={data.crisePdtRemCo} 
+          onChangeP={handleAllData}
           widthP="w-300"
         />
 
@@ -391,20 +372,31 @@ export default function Home() {
 
           htmlForLabelOne="tttUrgenceOui"
           idOne="tttUrgenceOui"
-          nameOne="tttUrgenceOui"
+          name="tttUrgence"
           valueOne={`ttt d'urgence oui`}
-          checkedOne={tttUrgence === `ttt d'urgence oui`}
-          onChangeOne={handleTttUrgence}
+          checkedOne={data.tttUrgence === `ttt d'urgence oui`}
+          onChangeOne={handleAllData}
           textOne={chooseLang === "FR" ? "Oui" : "Yes"}
 
           htmlForLabelTwo="tttUrgenceNon"
           idTwo="tttUrgenceNon"
-          nameTwo="tttUrgenceNon"
           valueTwo={`ttt d'urgence non`}
-          checkedTwo={tttUrgence === `ttt d'urgence non`}
-          onChangeTwo={handleTttUrgence}
+          checkedTwo={data.tttUrgence === `ttt d'urgence non`}
           textTwo={chooseLang === "FR" ? "Non" : "No"}
         />
+
+        {data.tttUrgence === "ttt d'urgence oui" && (
+          <InputComp 
+            paragraph={chooseLang === "FR" 
+              ? "Quel ttt d'urgence avez-vous ?"
+              : "What kind of emergency do you have?"}
+            idP="tttUrgenceName"
+            nameP="tttUrgenceName"
+            valueP={data.tttUrgenceName} 
+            onChangeP={handleAllData}
+            widthP="w-300"
+          />
+        )}
 
       </div>
 
@@ -414,6 +406,6 @@ export default function Home() {
         </button>
       </div>
 
-    </div>
+    </form>
   );
 };
