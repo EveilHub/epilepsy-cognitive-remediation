@@ -35,10 +35,10 @@ export default function LabelInputOuiNon(
         textTwo
     }: LabelInputOuiNonTypes) {
     return (
-        <div>
+        <div className="w-[48%] m-auto">
             <p className={`${idOne === "accepterTest" ? "mt-0" : "mt-8"} mb-4`}>{paragraphTxt}</p>
 
-            <div className={`${width} flex flex-row items-center justify-around py-2 bg-teal-50 border border-teal-100 dark:bg-cyan-50 dark:border-cyan-100 rounded-lg`}>
+            <div className={`${width} flex flex-row items-center justify-around py-2 bg-teal-50 border border-teal-100 dark:bg-cyan-50 dark:border-cyan-100 rounded-lg ml-4`}>
 
                 <label htmlFor={htmlForLabelOne}>
                 <input 

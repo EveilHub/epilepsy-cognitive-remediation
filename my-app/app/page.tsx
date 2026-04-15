@@ -1,7 +1,7 @@
 "use client";
 
 import { DataType } from "@/lib/definitions";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import LabelInputOuiNon from "./ui/questionnaire/LabelInputOuiNon";
 import InputComp from "./ui/questionnaire/InputComp";
@@ -37,10 +37,19 @@ export default function Home() {
     }));
   };
 
-  const handleSubmitHome = (e: FormEvent<HTMLFormElement>): void => {
+  const handleSubmitHome = (e: React.SubmitEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const formData: DataType = data;
 
+    const EpilepsySubmit = async (formData: DataType): Promise<void> => {
+      const data = await fetch("/api/epilepsy-submit", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      console.log(data);
+    };
+    EpilepsySubmit(formData);
     // await fetch('/api/patient', { 
     //     method: 'POST', 
     //     headers: { 'Content-Type': 'application/json' },
@@ -55,16 +64,19 @@ export default function Home() {
 
       <div className="mb-8">
         <h1 className="text-2xl font-bold">
-          {chooseLang === "FR" ? `Remédiation cognitive pour l'épilepsie` : `Cognitive rehabilitation for epilepsy`}
+          {chooseLang === "FR" 
+            ? `Remédiation cognitive pour l'épilepsie` 
+            : `Cognitive rehabilitation for epilepsy`}
         </h1>
       </div>
 
-      <div className="p-10 border border-teal-100 dark:border-cyan-600 rounded-lg">
+      <div className="flex flex-col p-10 border border-teal-100 dark:border-cyan-600 rounded-lg">
 
         <LabelInputOuiNon 
-          paragraphTxt={chooseLang === "FR" ? "Acceptez-vous de réaliser le test et comprenez-vous son but ?" :  "Do you agree to take the test, and do you understand its purpose?"}
+          paragraphTxt={chooseLang === "FR" 
+            ? "1) Acceptez-vous de réaliser le test et comprenez-vous son but ?" 
+            : "1) Do you agree to take the test, and do you understand its purpose?"}
           width="w-50"
-
           name="accepteTest"
 
           htmlForLabelOne="accepterTest"
@@ -81,7 +93,9 @@ export default function Home() {
         />
 
         <LabelInputOuiNon 
-          paragraphTxt={chooseLang === "FR" ? "Avez-vous de difficultés cognitives perçues ?" : "Do you have any perceived cognitive difficulties?"}
+          paragraphTxt={chooseLang === "FR" 
+            ? "2) Avez-vous de difficultés cognitives perçues ?" 
+            : "2) Do you have any perceived cognitive difficulties?"}
           width="w-50"
 
           htmlForLabelOne="diffcognitiveOui"
@@ -101,7 +115,9 @@ export default function Home() {
 
         {data.diffCogniOuiNon === "difficultés cognitves" && (
           <InputComp 
-            paragraph="Si oui, lesquelles ?"
+            paragraph={chooseLang === "FR" 
+              ? "3) Si oui, lesquelles ?"
+              : "3) If so, which ones ?"}
             idP="diffCognitives"
             nameP="diffCognitives"
             valueP={data.diffCognitives} 
@@ -111,7 +127,9 @@ export default function Home() {
         )}
 
         <LabelInputOuiNon 
-          paragraphTxt={chooseLang === "FR" ? "Avez-vous des besoins particuliers ?" : "Do you have any special needs?"}
+          paragraphTxt={chooseLang === "FR" 
+            ? "4) Avez-vous des besoins particuliers ?" 
+            : "4) Do you have any special needs?"}
           width="w-50"
 
           htmlForLabelOne="besoinsParticulierOui"
@@ -131,7 +149,9 @@ export default function Home() {
 
         {data.besoinsOuiNon === "besoins particuliers" && (
           <InputComp 
-            paragraph="Si oui, lesquelles ?"
+            paragraph={chooseLang === "FR" 
+              ? "5) Si oui, lesquelles ?"
+              : "5) If so, which ones ?"}
             idP="besoinsParticuliers"
             nameP="besoinsParticuliers"
             valueP={data.besoinsParticuliers} 
@@ -141,7 +161,9 @@ export default function Home() {
         )}
 
         <LabelInputOuiNon 
-          paragraphTxt={chooseLang === "FR" ? "Êtes-vous suffisamment reposé pour faire le test maintenant ?" : "Are you well-rested enough to take the test now?"}
+          paragraphTxt={chooseLang === "FR" 
+            ? "6) Êtes-vous suffisamment reposé pour faire le test maintenant ?" 
+            : "6) Are you well-rested enough to take the test now?"}
           width="w-50"
 
           htmlForLabelOne="reposOui"
@@ -161,8 +183,8 @@ export default function Home() {
 
         <InputComp 
           paragraph={chooseLang === "FR" 
-            ? "Quel type d’épilepsie vous a-t-on diagnostiqué ? (localisée/focale, généralisée, non classée) ?" 
-            : "What type of epilepsy have you been diagnosed with? (localized/focal, generalized, unclassified)"}
+            ? "7) Quel type d’épilepsie vous a-t-on diagnostiqué ? (localisée/focale, généralisée, non classée) ?" 
+            : "7) What type of epilepsy have you been diagnosed with? (localized/focal, generalized, unclassified)"}
           idP="diagnostic"
           nameP="diagnostic"
           valueP={data.diagnostic} 
@@ -170,79 +192,81 @@ export default function Home() {
           widthP="w-200"
         />
 
-        <p className="mt-8 mb-4">{chooseLang === "FR" 
-          ? "Combien de crises avez-vous en moyenne par mois ?" 
-          : "How many seizures do you have on average per month?"}</p>
+        <div className="w-[48%] m-auto">
+          <p className="mt-8 mb-4">{chooseLang === "FR" 
+            ? "8) Combien de crises avez-vous en moyenne par mois ?" 
+            : "8) How many seizures do you have on average per month?"}</p>
 
-        <div className="w-150 flex flex-row items-center justify-around py-2 bg-teal-50 border border-teal-100 rounded-lg">
-          <label htmlFor="crise0">
-            <input 
-              type="radio"
-              id="crise0" 
-              name="crisesState"
-              value={`aucune crise`}
-              checked={data.crisesState === `aucune crise`}
-              onChange={handleAllData}
-              className="mr-2"
-            />
-            aucune
-          </label>
+          <div className="w-150 flex flex-row items-center justify-around ml-4 py-2 bg-teal-50 border border-teal-100 rounded-lg">
+            <label htmlFor="crise0">
+              <input 
+                type="radio"
+                id="crise0" 
+                name="crisesState"
+                value={`aucune crise`}
+                checked={data.crisesState === `aucune crise`}
+                onChange={handleAllData}
+                className="mr-2"
+              />
+              aucune
+            </label>
 
-          <label htmlFor="crise1">
-            <input 
-              type="radio"
-              id="crise1" 
-              name="crisesState"
-              value="1-2 crise"
-              checked={data.crisesState === "1-2 crise"}
-              onChange={handleAllData}
-              className="mr-2"
-            />
-            1-2
-          </label>
-          <label htmlFor="crise2">
-            <input 
-              type="radio"
-              id="crise2" 
-              name="crisesState"
-              value="2-3 crises"
-              checked={data.crisesState === "2-3 crises"}
-              onChange={handleAllData}
-              className="mr-2"
-            />
-            2-3
-          </label>
+            <label htmlFor="crise1">
+              <input 
+                type="radio"
+                id="crise1" 
+                name="crisesState"
+                value="1-2 crise"
+                checked={data.crisesState === "1-2 crise"}
+                onChange={handleAllData}
+                className="mr-2"
+              />
+              1-2
+            </label>
+            <label htmlFor="crise2">
+              <input 
+                type="radio"
+                id="crise2" 
+                name="crisesState"
+                value="2-3 crises"
+                checked={data.crisesState === "2-3 crises"}
+                onChange={handleAllData}
+                className="mr-2"
+              />
+              2-3
+            </label>
 
-          <label htmlFor="crise3">
-            <input 
-              type="radio"
-              id="crise3" 
-              name="crisesState"
-              value="3-4 crises"
-              checked={data.crisesState === "3-4 crises"}
-              onChange={handleAllData}
-              className="mr-2"
-            />
-            3-4
-          </label>
-          <label htmlFor="crise4">
-            <input 
-              type="radio"
-              id="crise4" 
-              name="crisesState"
-              value="+ de 4 crises"
-              checked={data.crisesState === "+ de 4 crises"}
-              onChange={handleAllData}
-              className="mr-2"
-            />
-            + de 4 crises
-          </label>
+            <label htmlFor="crise3">
+              <input 
+                type="radio"
+                id="crise3" 
+                name="crisesState"
+                value="3-4 crises"
+                checked={data.crisesState === "3-4 crises"}
+                onChange={handleAllData}
+                className="mr-2"
+              />
+              3-4
+            </label>
+            <label htmlFor="crise4">
+              <input 
+                type="radio"
+                id="crise4" 
+                name="crisesState"
+                value="+ de 4 crises"
+                checked={data.crisesState === "+ de 4 crises"}
+                onChange={handleAllData}
+                className="mr-2"
+              />
+              + de 4 crises
+            </label>
+          </div>
         </div>
 
         <LabelInputOuiNon 
           paragraphTxt={chooseLang === "FR" 
-            ? "Avez-vous des crises avec ou sans pertes de connaissances ?" 
-            : "Do you have seizures with or without loss of consciousness?"}
+            ? "9) Avez-vous des crises avec ou sans pertes de connaissances ?" 
+            : "9) Do you have seizures with or without loss of consciousness?"}
           width="w-150"
 
           htmlForLabelOne="avecPerteCo"
@@ -265,9 +289,9 @@ export default function Home() {
         />
         
         <InputComp 
-          paragraph={chooseLang === "FR" ?
-            "Combien de temps les crises durent-elles (en minutes) ?"
-            : "How long do the episodes last (in minutes)?"}
+          paragraph={chooseLang === "FR" 
+            ? "10) Combien de temps les crises durent-elles (en minutes) ?"
+            : "10) How long do the episodes last (in minutes)?"}
           idP="tempsDeCrise"
           nameP="tempsCrise"
           valueP={data.tempsCrise}
@@ -278,8 +302,8 @@ export default function Home() {
 
         <LabelInputOuiNon 
           paragraphTxt={chooseLang === "FR" 
-            ? "Prenez-vous un MAE (Médicament Anti Epileptique) ?" 
-            : "Are you taking an AED (antiepileptic drug)?"}
+            ? "11) Prenez-vous un MAE (Médicament Anti Epileptique) ?" 
+            : "11) Are you taking an AED (antiepileptic drug)?"}
           width="w-50"
 
           htmlForLabelOne="ouiMae"
@@ -301,8 +325,8 @@ export default function Home() {
           <>
             <InputComp 
               paragraph={chooseLang === "FR" 
-                ? "Comment s'appelle le traitement (MAE) que vous prenez ?"
-                : "What is the name of the medication (MAE) you're taking?"}
+                ? "12) Comment s'appelle le traitement (MAE) que vous prenez ?"
+                : "12) What is the name of the medication (MAE) you're taking?"}
               idP="maeName"
               nameP="nameMae"
               valueP={data.nameMae} 
@@ -312,8 +336,8 @@ export default function Home() {
 
             <InputComp 
               paragraph={chooseLang === "FR" 
-                ? "A quand date la dernière prise de traitement MAE ?"
-                : "When was the last time you took your MAE medication?"}
+                ? "13) A quand date la dernière prise de traitement MAE ?"
+                : "13) When was the last time you took your MAE medication?"}
               idP="dernierePrise"
               nameP="dernierePrise"
               valueP={data.dernierePrise} 
@@ -323,32 +347,32 @@ export default function Home() {
 
             <InputComp 
               paragraph={chooseLang === "FR" 
-                ? "Quels sont les effets secondaires de vos traitements MAE ?"
-                : "What are the side effects of your MAE treatments?"}
+                ? "14) Quels sont les effets secondaires de vos traitements MAE ?"
+                : "14) What are the side effects of your MAE treatments?"}
               idP="sideEffects"
               nameP="sideEffects"
               valueP={data.sideEffects} 
               onChangeP={handleAllData}
-              widthP="w-300"
+              widthP="w-200"
             />
           </>
         )}
 
         <InputComp 
           paragraph={chooseLang === "FR" 
-            ? "Si vous avez une crise durant la remédiation cognitive, que devons-nous faire ?"
-            : "If you have a seizure during cognitive remediation, what should we do?"}
+            ? "15) Si vous avez une crise durant la remédiation cognitive, que devons-nous faire ?"
+            : "15) If you have a seizure during cognitive remediation, what should we do?"}
           idP="crisePdtRemCo"
           nameP="crisePdtRemCo"
           valueP={data.crisePdtRemCo} 
           onChangeP={handleAllData}
-          widthP="w-300"
+          widthP="w-200"
         />
 
         <LabelInputOuiNon 
           paragraphTxt={chooseLang === "FR" 
-            ? "Avez-vous un traitement d’urgence (midazolam intranasal, etc.) ?"
-            : "Do you have any emergency treatment options (such as intranasal midazolam, etc.)?"}
+            ? "16) Avez-vous un traitement d’urgence (midazolam intranasal, etc.) ?"
+            : "16) Do you have any emergency treatment options (such as intranasal midazolam, etc.)?"}
           width="w-50"
 
           htmlForLabelOne="tttUrgenceOui"
@@ -369,13 +393,13 @@ export default function Home() {
         {data.tttUrgence === "ttt d'urgence oui" && (
           <InputComp 
             paragraph={chooseLang === "FR" 
-              ? "Quel ttt d'urgence avez-vous ?"
-              : "What kind of emergency do you have?"}
+              ? "17) Quel ttt d'urgence avez-vous ?"
+              : "17) What kind of emergency do you have?"}
             idP="tttUrgenceName"
             nameP="tttUrgenceName"
             valueP={data.tttUrgenceName} 
             onChangeP={handleAllData}
-            widthP="w-300"
+            widthP="w-200"
           />
         )}
 
