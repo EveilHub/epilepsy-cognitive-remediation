@@ -55,10 +55,9 @@ export default function PatientPage() {
                         <button 
                             type="button" 
                             onClick={handleCancel}
-                            className="text-sm text-white bg-teal-500 shadow-md shadow-[0_10px_35px_rgba(0,0,0,1)] hover:bg-teal-400 hover:shadow-none 
-                            active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.25),0_2px_4px_rgba(0,0,0,0.06)] active:bg-teal-300 
-                            dark:bg-cyan-600 dark:shadow-md shadow-[0_10px_35px_rgba(0,0,0,1)] dark:hover:bg-cyan-500 dark:hover:shadow-none 
-                            dark:active:bg-cyan-400 dark:active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.25),0_2px_4px_rgba(0,0,0,0.06)] px-6 py-1 rounded transition-colors"
+                            className="text-sm text-white bg-teal-500 shadow-md shadow-[0_10px_35px_rgba(0,0,0,1)] transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 active:font-sm hover:bg-teal-400 hover:shadow-none 
+                                active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.25),0_2px_4px_rgba(0,0,0,0.06)] active:bg-teal-300 dark:bg-cyan-600 dark:shadow-md shadow-[0_10px_35px_rgba(0,0,0,1)] dark:hover:bg-cyan-500 dark:hover:shadow-none dark:active:bg-cyan-400 
+                                dark:active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.25),0_2px_4px_rgba(0,0,0,0.06)] my-4 px-6 py-1 rounded transition-colors"
                         >
                             Annuler
                         </button>
@@ -121,10 +120,9 @@ export default function PatientPage() {
                         </div>
 
                         <div className="flex justify-center my-2">
-                            <button type="submit" className="text-sm text-white bg-teal-500 shadow-md shadow-[0_10px_35px_rgba(0,0,0,1)] hover:bg-teal-400 hover:shadow-none 
-                                active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.25),0_2px_4px_rgba(0,0,0,0.06)] active:bg-teal-300 
-                                dark:bg-cyan-600 dark:shadow-md shadow-[0_10px_35px_rgba(0,0,0,1)] dark:hover:bg-cyan-500 dark:hover:shadow-none dark:active:bg-cyan-400 dark:active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.25),0_2px_4px_rgba(0,0,0,0.06)]
-                                my-4 px-6 py-1 rounded transition-colors"
+                            <button type="submit" className="text-sm text-white bg-teal-500 shadow-md shadow-[0_10px_35px_rgba(0,0,0,1)] transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 active:font-sm hover:bg-teal-400 hover:shadow-none 
+                                active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.25),0_2px_4px_rgba(0,0,0,0.06)] active:bg-teal-300 dark:bg-cyan-600 dark:shadow-md shadow-[0_10px_35px_rgba(0,0,0,1)] dark:hover:bg-cyan-500 dark:hover:shadow-none dark:active:bg-cyan-400 
+                                dark:active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.25),0_2px_4px_rgba(0,0,0,0.06)] my-4 px-6 py-1 rounded transition-colors"
                             >
                                 Enregistrer
                             </button>

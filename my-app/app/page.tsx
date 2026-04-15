@@ -403,12 +403,15 @@ export default function Home() {
           />
         )}
 
-      </div>
+        <div className="flex justify-center mt-10">
+            <button type="submit" className="w-1/5 text-base font-bold text-white bg-teal-500 shadow-md shadow-[0_10px_35px_rgba(0,0,0,1)] transition-transform duration-300 ease-in-out hover:scale-[1.01] active:scale-[0.99] active:font-sm hover:bg-teal-400 hover:shadow-none 
+                active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.25),0_2px_4px_rgba(0,0,0,0.06)] active:bg-teal-300 dark:bg-cyan-600 dark:shadow-md shadow-[0_10px_35px_rgba(0,0,0,1)] dark:hover:bg-cyan-500 dark:hover:shadow-none dark:active:bg-cyan-400 
+                dark:active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.25),0_2px_4px_rgba(0,0,0,0.06)] py-2 rounded transition-colors"
+            >
+                {chooseLang === "FR" ? "Enregistrer" : "Subscribe"}
+            </button>
+        </div>
 
-      <div className="flex justify-center">
-        <button type="submit" className="text-white bg-teal-400 hover:bg-teal-500 active:bg-teal-300 dark:bg-cyan-500 dark:hover:bg-cyan-600 dark:active:bg-cyan-400 mt-4 px-4 py-2 rounded-lg">
-          {chooseLang === "FR" ? "Enregistrer" : "Subscribe"}
-        </button>
       </div>
 
     </form>
