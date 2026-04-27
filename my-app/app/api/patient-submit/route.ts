@@ -1,11 +1,17 @@
-import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
+import { NextRequest, NextResponse } from "next/server";
 
-async function POST(req: Request, res: Response) {
-    const data = await req.body;
+export async function POST(req: NextRequest) {
+    //const data = await req.body;
+    const patientId = await cookies();
 
-    if (!data) {
-        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
-    };
+    // if (!patientId) {
+
+    // }
+
+    // if (!data) {
+    //     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    // };
 
     console.log("Ok with data from patient");
 

@@ -1,10 +1,16 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
 import { AttentionSelectiveContent } from "@/lib/tasks-content";
 import Link from "next/link";
 
 export default function AttentionSelectivePage() {
+
+    const { chooseLang } = useLanguage();
+    
     return (
         <div>
-            <h1 className="text-2xl font-bold">Attention Sélective et Divisée</h1>
+            <h1 className="text-2xl font-bold">{chooseLang === "FR" ? "Attention Sélective et divisée" : "Selective and Divided Attention"}</h1>
 
             <p className="my-10">Filtrer les distractions / gérer 2 tâches simultanément</p>
 

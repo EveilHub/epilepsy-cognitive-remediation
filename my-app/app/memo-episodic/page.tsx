@@ -1,10 +1,16 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
 import { MemoEpisodic } from "@/lib/tasks-content";
 import Link from "next/link";
 
 export default function MemoEpisodiquePage() {
+
+    const { chooseLang } = useLanguage();
+
     return (
         <div>
-            <h1 className="text-2xl font-bold">Memoire Episodique</h1>
+            <h1 className="text-2xl font-bold">{chooseLang === "FR" ? "Mémoire Episodique" : "Episodic Memory"}</h1>
 
             <div className="text-lg pl-4">
                 <p className="my-8">Se souvenir d&apos;événements, d&apos;histoires, de contextes</p>

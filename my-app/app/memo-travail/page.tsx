@@ -1,10 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import { MemoTravailContent } from "@/lib/tasks-content";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function MemoTravailPage() {
+
+    const { chooseLang } = useLanguage();
+
     return (
         <div>
-            <h1 className="text-2xl font-bold">Memoire au Travail</h1>
+            <h1 className="text-2xl font-bold">{chooseLang === "FR" ? "Memoire au Travail" : "Working Memory"}</h1>
 
             <div className="text-lg pl-4">
                 <p className="my-8">Garder et manipuler des informations en temps réel</p>
