@@ -1,14 +1,24 @@
-import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
+import { NextRequest, NextResponse } from "next/server";
 
-async function POSTEPI(req: Request, res: Response) {
-    const data = await req.body;
+export async function POST(req: NextRequest) {
 
-    if (!data) {
-        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    const data = await cookies();
+    const patientId = cookieStore.get("selectedPatientId")?.value;
+
+    if (!patientId) {
+        return NextResponse.json({ error: 'Internal Server Error' }, { status: 400 });
     };
 
-    console.log("data ok from epilepsy => ", data);
+    const { fatigue, aDouleur, evaDouleur } = await req.json();
 
-    //return NextResponse.redirect(new URL('/', req.url));
-    return NextResponse.json({data: "API patient done"}, {status: 200});
+    if (!fatigue || aDouleur === undefined) {
+        return NextResponse.json({ error: 'Internal Server Error' }, { status: 400 });
+    };
+
+    if (patientId) {
+        return NextResponse.json({data: "API patient done"}, {status: 201});
+    };
+
+    return NextResponse.json({response: "something went wrong"}, {status: 500});
 };
