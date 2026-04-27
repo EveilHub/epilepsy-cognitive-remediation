@@ -5,17 +5,15 @@ type LabelInputOuiNonTypes = {
     width: string;
     htmlForLabelOne: string;
     idOne: string;
-    nameOne: string;
+    name: string;
     valueOne: string;
     checkedOne: boolean;
     onChangeOne: (e: ChangeEvent<HTMLInputElement>) => void;
     textOne: string;
     htmlForLabelTwo: string;
     idTwo: string;
-    nameTwo: string;
     valueTwo: string;
     checkedTwo: boolean;
-    onChangeTwo: (e: ChangeEvent<HTMLInputElement>) => void;
     textTwo: string;
 };
 
@@ -23,32 +21,30 @@ export default function LabelInputOuiNon(
     {
         paragraphTxt, 
         width,
+        name,
         htmlForLabelOne,
         idOne,
-        nameOne,
         valueOne,
         checkedOne,
         onChangeOne,
         textOne,
         htmlForLabelTwo,
         idTwo,
-        nameTwo,
         valueTwo,
         checkedTwo,
-        onChangeTwo,
         textTwo
     }: LabelInputOuiNonTypes) {
     return (
-        <div>
+        <div className="w-[48%] m-auto">
             <p className={`${idOne === "accepterTest" ? "mt-0" : "mt-8"} mb-4`}>{paragraphTxt}</p>
 
-            <div className={`${width} flex flex-row items-center justify-around py-2 bg-teal-50 border border-teal-100 dark:bg-cyan-50 dark:border-cyan-100 rounded-lg`}>
+            <div className={`${width} flex flex-row items-center justify-around py-2 bg-teal-50 border border-teal-100 dark:bg-cyan-50 dark:border-cyan-100 rounded-lg ml-4`}>
 
                 <label htmlFor={htmlForLabelOne}>
                 <input 
                     type="radio"
                     id={idOne}
-                    name={nameOne}
+                    name={name}
                     value={valueOne}
                     checked={checkedOne}
                     onChange={onChangeOne}
@@ -61,10 +57,10 @@ export default function LabelInputOuiNon(
                 <input 
                     type="radio"
                     id={idTwo}
-                    name={nameTwo}
+                    name={name}
                     value={valueTwo}
                     checked={checkedTwo}
-                    onChange={onChangeTwo}
+                    onChange={onChangeOne}
                     className="mr-2"
                 />
                 {textTwo}

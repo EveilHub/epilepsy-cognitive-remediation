@@ -19,18 +19,18 @@ export default function Switcher() {
                     />
                 </div>
                 <div className="w-[30%] flex items-center justify-between">
-                    <li>
-                        <Link href="/patient" className="dark:hover:text-cyan-500">
+                    <li className="transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
+                        <Link href="/patient" className="dark:hover:text-cyan-400 dark:active:text-cyan-600 block">
                             Patient
                         </Link>
                     </li>
-                    <li>
-                        <Link href="/scores" className="dark:hover:text-cyan-500">
+                    <li className="transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
+                        <Link href="/scores" className="dark:hover:text-cyan-400 dark:active:text-cyan-600 block">
                             Scores
                         </Link>
                     </li>
-                    <li>
-                        <Link href="/login" className="dark:hover:text-cyan-500">
+                    <li className="transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
+                        <Link href="/login" className="dark:hover:text-cyan-400 dark:active:text-cyan-600 block">
                             Login
                         </Link>
                     </li>
