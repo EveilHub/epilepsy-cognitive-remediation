@@ -37,26 +37,16 @@ export default function Home() {
     }));
   };
 
-  const handleSubmitHome = (e: React.SubmitEvent<HTMLFormElement>): void => {
+  const handleSubmitHome = async (e: React.SubmitEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     const formData: DataType = data;
 
-    const EpilepsySubmit = async (formData: DataType): Promise<void> => {
-      const data = await fetch("/api/epilepsy-submit", {
-        method: "POST",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      console.log(data);
-    };
-    EpilepsySubmit(formData);
-    // await fetch('/api/patient', { 
-    //     method: 'POST', 
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(allFormData) 
-    // });
-
-    console.log(formData)
+    const dataSend = await fetch("/api/epilepsy-submit", {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+    console.log(dataSend);
   };
 
   return (

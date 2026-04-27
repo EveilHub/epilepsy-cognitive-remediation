@@ -21,7 +21,7 @@ export default function PatientPage() {
         router.push("/");
     };
 
-    const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>): void => {
+    const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
         const target = e.target as HTMLFormElement;
         const formData = new FormData(target);
@@ -33,14 +33,12 @@ export default function PatientPage() {
         const dataSubmit: dataSubmitProps = { nameSubmit, firstNameSubmit, birthDaySubmit };
 
         // api
-        const SubmitPatient = async (dataSubmit: dataSubmitProps) => {
-            const data = await fetch("/api/patient-submit", {
-                method: "POST",
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({dataSubmit})
-            });
-        };
-        SubmitPatient(dataSubmit);
+        const data = await fetch("/api/patient-submit", {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({dataSubmit})
+        });
+        console.log(data);
     };
     
     return (
