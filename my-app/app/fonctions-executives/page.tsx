@@ -1,10 +1,16 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
 import { FonctionExecutives } from "@/lib/tasks-content";
 import Link from "next/link";
 
 export default function FonctionsExecutivesPage() {
+
+    const { chooseLang } = useLanguage();
+
     return (
         <div>
-            <h1 className="text-2xl font-bold">Fonctions Executives</h1>
+            <h1 className="text-2xl font-bold">{chooseLang === "FR" ? "Fonctions Exécutives" : "Executive Functions"}</h1>
 
             <p className="my-10">Planifier, s&apos;adapter, inhiber les mauvaises réponses</p>
 

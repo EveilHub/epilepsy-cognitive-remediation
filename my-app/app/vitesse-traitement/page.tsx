@@ -1,10 +1,16 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
 import { VitesseTraiementContent } from "@/lib/tasks-content";
 import Link from "next/link";
 
 export default function VitesseTraitementPage() {
+
+    const { chooseLang } = useLanguage();
+
     return (
         <div>
-            <h1 className="text-2xl font-bold">Vitesse Traitement</h1>
+            <h1 className="text-2xl font-bold">{chooseLang === "FR" ? "Vitesse de Traitement" : "Processing Speed"}</h1>
 
             <p className="my-10">Répondre rapidement et précisément</p>
 

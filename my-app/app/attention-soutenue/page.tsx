@@ -1,10 +1,16 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
 import { AttentSouContent } from "@/lib/tasks-content";
 import Link from "next/link";
 
 export default function AttentionSoutenuePage() {
+
+    const { chooseLang } = useLanguage();
+    
     return (
         <div>
-            <h1 className="text-2xl font-bold">Attention Soutenue</h1>
+            <h1 className="text-2xl font-bold">{chooseLang === "FR" ? "Attention Soutenue" : "Sustained Attention"}</h1>
 
             <p className="my-10">Maintenir sa concentration sur la durée</p>
 
